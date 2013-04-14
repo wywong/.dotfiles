@@ -26,8 +26,9 @@ set comments=sl:/*,mb:\ *,elx:\ */
 set wildmode=longest:full
 set wildmenu
 
-let g:rainbow_active = 1
-let g:rainbow_operators = 1 
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
 " Enhanced keyboard mappings
 " in normal mode F2 will save the file
