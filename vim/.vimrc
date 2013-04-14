@@ -26,8 +26,8 @@ set comments=sl:/*,mb:\ *,elx:\ */
 set wildmode=longest:full
 set wildmenu
 
-let g:rainbow_operators = 2 
-au FileType c,cpp,objc,objcpp,plx,perl call rainbow#activate()
+let g:rainbow_active = 1
+let g:rainbow_operators = 1 
 
 " Enhanced keyboard mappings
 " in normal mode F2 will save the file
