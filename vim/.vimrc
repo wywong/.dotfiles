@@ -17,7 +17,7 @@ set textwidth=160
 " turn syntax highlighting on
 set t_Co=256
 syntax enable
-colorscheme mustang
+colorscheme wombat256
 set number
 set showmatch
 " intelligent comments
