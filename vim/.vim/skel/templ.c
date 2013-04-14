@@ -1,0 +1,6 @@
+// Filename: %FILENAME%
+
+#include "%FILE%"
+
+
+
