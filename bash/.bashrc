@@ -5,7 +5,7 @@
 # If not running interactively, don't do anything
 [[ "$-" != *i* ]] && return
 
-mount c: /c
+export PS1="\n\e[32;40m\u@\H \e[33;40m\w\e[0m\n$ "
 
 alias rm='rm -i'
 alias mv='mv -i'
@@ -17,7 +17,6 @@ alias ll='ls -alh'
 alias la='ls -A'
 alias l='ls -CFlh'
 
-export PS1="\n\e[32;40m\u@\H \e[33;40m\w\e[0m\n$ "
 
 alias df='df -h'
 alias du='du -h'
