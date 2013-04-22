@@ -82,3 +82,4 @@ autocmd BufNewFile *.cpp call CreateCPPSourceFile()
 autocmd BufNewFile *.h call CreateHeaderFile()
 autocmd BufNewFile *.hpp call CreateHPPFile()
 autocmd BufNewFile makefile 0r ~/.vim/skel/maketemp
+autocmd BufNewFile Makefile 0r ~/.vim/skel/maketemp
