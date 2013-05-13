@@ -7,6 +7,8 @@
 
 export PS1="\n\e[32;40m\u@\H \e[33;40m\w\e[0m\n$ "
 
+alias R='R --no-save'
+
 alias rm='rm -i'
 alias mv='mv -i'
 alias ln='ln -i'
