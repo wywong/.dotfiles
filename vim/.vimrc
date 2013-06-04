@@ -26,6 +26,11 @@ set comments=sl:/*,mb:\ *,elx:\ */
 set wildmode=longest:full
 set wildmenu
 
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+"set nofoldenable        "dont fold by default
+set foldlevel=0
+
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
