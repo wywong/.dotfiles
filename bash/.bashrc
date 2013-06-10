@@ -7,6 +7,8 @@
 
 export PS1="\n\e[32;40m\u@\H \e[33;40m\w\e[0m\n$ "
 
+export EDITOR=vim
+
 alias R='R --no-save'
 
 alias rm='rm -i'
@@ -23,3 +25,4 @@ alias l='ls -CFlh'
 alias df='df -h'
 alias du='du -h'
 
+echo Current Time: `date`
