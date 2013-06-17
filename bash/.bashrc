@@ -21,6 +21,8 @@ alias ll='ls -alh'
 alias la='ls -A'
 alias l='ls -CFlh'
 
+alias info='info --vi-keys'
+
 
 alias df='df -h'
 alias du='du -h'
