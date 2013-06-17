@@ -39,6 +39,8 @@ au Syntax * RainbowParenthesesLoadBraces
 " in normal mode F2 will save the file
 nnoremap <F2> :w<CR>
 " in insert mode F2 will exit insert, save, enters insert again
+nnoremap <F3> :set noexpandtab!<CR>
+" toggle expandtab
 inoremap <F2> <ESC>:w<CR>i
 " build using makeprg with <F7>
 nnoremap <F7> :make<CR>
