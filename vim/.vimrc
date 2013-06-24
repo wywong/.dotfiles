@@ -15,9 +15,17 @@ set expandtab        " expand tabs to spaces
 
 set textwidth=160
 " turn syntax highlighting on
-set t_Co=256
 syntax enable
-colorscheme wombat256
+
+if has('gui_running')
+    " GUI colors
+    colorscheme mustang
+else
+    " Non-GUI (terminal) colors
+    set t_Co=256
+    colorscheme wombat256
+endif
+
 set number
 set showmatch
 " intelligent comments
