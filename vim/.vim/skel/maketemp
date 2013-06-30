@@ -1,15 +1,20 @@
 CC = gcc
-CFLAGS = -g -Wall
+CFLAGS = -c -g -Wall
+LDFLAGS =
+SOURCES =
+OBJECTS = $(SOURCES:.c=.o)
+EXECUTABLE =
 
-all: run
+all: $(SOURCES) $(EXECUTABLE)
 
-:	.c
-		$(CC) $(CFLAGS) -o 
-
-run:
-		./
+$(EXECUTABLE): $(OBJECTS)
+		$(CC) $(LDFLAGS) $(OBJECTS) -o $@
 
 clean:
 		rm -f *.o
 
+run:
+		./
 
+.c.o:
+		$(CC) $(CFLAGS) $< -o $@
