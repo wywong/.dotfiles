@@ -11,6 +11,8 @@ export EDITOR=vim
 
 set -o vi
 
+set -o noclobber
+
 alias R='R --no-save'
 
 alias rm='rm -i'
