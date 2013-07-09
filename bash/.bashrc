@@ -21,9 +21,9 @@ alias ln='ln -i'
 alias cp='cp -i'
 
 alias ls='ls --color'
-alias ll='ls -alh'
+alias ll='ls -alht'
 alias la='ls -A'
-alias l='ls -CFlh'
+alias l='ls -CFlht'
 
 alias info='info --vi-keys'
 
