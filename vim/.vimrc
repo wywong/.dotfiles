@@ -51,9 +51,9 @@ nnoremap <F3> :set noexpandtab!<CR>
 " toggle expandtab
 inoremap <F2> <ESC>:w<CR>i
 " insert current time and date
-nnoremap <F4> O<ESC>:r! echo Modified: `date`<CR>kdd
+nnoremap <F4> O<ESC>:r! echo Modified: `date "+\%Y-\%m-\%d"`<CR>kdd
 " insert current time and date
-inoremap <F4> <ESC>O<ESC>:r! echo Modified: `date`<CR>kddi
+inoremap <F4> <ESC>O<ESC>:r! echo Modified: `date "+\%Y-\%m-\%d"`<CR>kddi
 " build using makeprg with <F7>
 nnoremap <F7> :make<CR>
 " build using makeprg with <F7>, in insert mode exit to command mode, save and compile
