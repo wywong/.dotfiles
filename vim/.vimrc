@@ -39,7 +39,20 @@ set foldnestmax=10      "deepest fold is 10 levels
 "set nofoldenable        "dont fold by default
 set foldlevel=0
 
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-surround'
+Bundle 'kien/rainbow_parentheses.vim'
+
+filetype plugin indent on
+filetype on
+
 au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
@@ -47,19 +60,21 @@ au Syntax * RainbowParenthesesLoadBraces
 " in normal mode F2 will save the file
 nnoremap <F2> :w<CR>
 " in insert mode F2 will exit insert, save, enters insert again
-nnoremap <F3> :set noexpandtab!<CR>
-" toggle expandtab
 inoremap <F2> <ESC>:w<CR>i
-" insert current time and date
-nnoremap <F4> O<ESC>:r! echo Modified: `date "+\%Y-\%m-\%d"`<CR>kdd
-" insert current time and date
-inoremap <F4> <ESC>O<ESC>:r! echo Modified: `date "+\%Y-\%m-\%d"`<CR>kddi
+" toggle expandtab
+nnoremap <F3> :set noexpandtab!<CR>
+" toggle NERDTree
+nnoremap <F4> :NERDTreeToggle<CR>
 " build using makeprg with <F7>
-nnoremap <F7> :make<CR>
+nnoremap <F5> :make<CR>
 " build using makeprg with <F7>, in insert mode exit to command mode, save and compile
-inoremap <F7> <ESC>:w<CR>:make<CR>
+inoremap <F5> <ESC>:w<CR>:make<CR>
 " build using makeprg with <S-F7>
-noremap <S-F7> :make clean all<CR>
+nnoremap <S-F5> :make clean all<CR>
+" insert current time and date
+nnoremap <F6> O<ESC>:r! echo Modified: `date "+\%Y-\%m-\%d"`<CR>kdd
+" insert current time and date
+inoremap <F6> <ESC>O<ESC>:r! echo Modified: `date "+\%Y-\%m-\%d"`<CR>kddi
 
 function! CreateHeaderFile()
     silent! 0r ~/.vim/skel/templ.h
@@ -102,3 +117,6 @@ autocmd BufNewFile *.h call CreateHeaderFile()
 autocmd BufNewFile *.hpp call CreateHPPFile()
 autocmd BufNewFile makefile 0r ~/.vim/skel/maketemp
 autocmd BufNewFile Makefile 0r ~/.vim/skel/maketemp
+
+autocmd VimEnter * NERDTree " Start NERDTree when vim is opened
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
