@@ -2,11 +2,8 @@ set enc=utf-8
 set fenc=utf-8
 set termencoding=utf-8
 
-" disable vi compatibility (emulation of old bugs)
 set nocompatible
-" use indentation of previous line
 set autoindent
-
 set smartindent
 
 set tabstop=4        " tab width is 4 spaces
@@ -16,7 +13,6 @@ set expandtab        " expand tabs to spaces
 set textwidth=160
 " turn syntax highlighting on
 syntax enable
-
 if has('gui_running')
     " GUI colors
     colorscheme mustang
@@ -34,9 +30,10 @@ set comments=sl:/*,mb:\ *,elx:\ */
 set wildmode=longest:full
 set wildmenu
 
+set hlsearch
+
 set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
-"set nofoldenable        "dont fold by default
 set foldlevel=0
 
 filetype off
@@ -44,17 +41,42 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
+Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-surround'
-Bundle 'kien/rainbow_parentheses.vim'
 
 filetype plugin indent on
-filetype on
 
+" rainbow_parentheses
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
+"statusline setup
+set noruler
+set laststatus=2
+
+set statusline =%#identifier#
+set statusline+=[%t]    "tail of the filename
+set statusline+=%*
+
+set statusline+=%h      "help file flag
+
+"read only flag
+set statusline+=%#identifier#
+set statusline+=%r
+set statusline+=%*
+
+"modified flag
+set statusline+=%#identifier#
+set statusline+=%m
+set statusline+=%*
+
+"display a warning if &paste is set
+set statusline+=%#error#
+set statusline+=%{&paste?'[paste]':''}
+set statusline+=%*
 
 " Enhanced keyboard mappings
 " in normal mode F2 will save the file
@@ -118,5 +140,5 @@ autocmd BufNewFile *.hpp call CreateHPPFile()
 autocmd BufNewFile makefile 0r ~/.vim/skel/maketemp
 autocmd BufNewFile Makefile 0r ~/.vim/skel/maketemp
 
-autocmd VimEnter * NERDTree " Start NERDTree when vim is opened
+autocmd VimEnter * if !argc() | NERDTree | endif " Start NERDTree if no file specified
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
