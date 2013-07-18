@@ -61,8 +61,10 @@ set statusline =%#identifier#
 set statusline+=[%t]    "tail of the filename
 set statusline+=%*
 
-set statusline+=%h      "help file flag
+set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+set statusline+=%{&ff}] "file format
 
+set statusline+=%h      "help file flag
 "read only flag
 set statusline+=%#identifier#
 set statusline+=%r
@@ -77,6 +79,12 @@ set statusline+=%*
 set statusline+=%#error#
 set statusline+=%{&paste?'[paste]':''}
 set statusline+=%*
+
+" left and right separator
+set statusline+=%=
+" column and lines numbers
+set statusline+=%c,
+set statusline+=%l/%L
 
 " Enhanced keyboard mappings
 " in normal mode F2 will save the file
