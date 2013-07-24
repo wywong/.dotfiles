@@ -25,11 +25,6 @@ set statusline+=%#error#
 set statusline+=%{&paste?'[paste]':''}
 set statusline+=%*
 
-" Syntastic Status Line
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
 " left and right separator
 set statusline+=%=
 " column and lines numbers
