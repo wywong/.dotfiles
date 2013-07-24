@@ -34,12 +34,18 @@ function! CreateCPPSourceFile()
     silent! exe "%s/%FILE%/".expand("<afile>")"/g"
 endfunction
 
+function! CreateRubySourceFile()
+    silent! 0r ~/.vim/skel/templ.rb
+    silent! exe "%s/%FILENAME%/"expand("<afile>")"/g"
+endfunction
+
 autocmd BufNewFile main.c 0r ~/.vim/skel/main.c
 autocmd BufNewFile main.cpp 0r ~/.vim/skel/main.cpp
 autocmd BufNewFile *.c call CreateCSourceFile()
 autocmd BufNewFile *.cpp call CreateCPPSourceFile()
 autocmd BufNewFile *.h call CreateHeaderFile()
 autocmd BufNewFile *.hpp call CreateHPPFile()
+autocmd BufNewFile *.rb call CreateRubySourceFile()
 autocmd BufNewFile makefile 0r ~/.vim/skel/maketemp
 autocmd BufNewFile Makefile 0r ~/.vim/skel/maketemp
 
