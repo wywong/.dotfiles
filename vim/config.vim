@@ -20,6 +20,7 @@ set smartindent
 set tabstop=4        " tab width is 4 spaces
 set shiftwidth=4     " indent also with 4 spaces
 set expandtab        " expand tabs to spaces
+autocmd FileType make set noexpandtab
 
 set textwidth=160
 set number
