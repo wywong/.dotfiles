@@ -3,6 +3,8 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
+
+Bundle 'airblade/vim-gitgutter'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-fugitive'
@@ -20,3 +22,5 @@ au Syntax * RainbowParenthesesLoadBraces
 autocmd VimEnter * if !argc() | NERDTree | endif " Start NERDTree if no file specified
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+" GitGutter
+autocmd VimEnter * GitGutterEnable
