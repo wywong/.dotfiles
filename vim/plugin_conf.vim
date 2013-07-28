@@ -5,6 +5,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'scrooloose/nerdtree'
+Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 
 filetype plugin indent on
