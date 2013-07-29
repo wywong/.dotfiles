@@ -26,7 +26,9 @@ set statusline+=%{&paste?'[paste]':''}
 set statusline+=%*
 
 " Fugitive
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+set statusline+=%#identifier#
+set statusline+=%{fugitive#statusline()}
+set statusline+=%*
 
 " left and right separator
 set statusline+=%=
