@@ -37,6 +37,8 @@ set wildmenu
 
 set hlsearch
 
+set cul
+
 set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
 set foldlevel=0
