@@ -18,3 +18,8 @@ nnoremap <F6> O<ESC>:r! echo Modified: `date "+\%Y-\%m-\%d"`<CR>kdd
 " insert current time and date
 inoremap <F6> <ESC>O<ESC>:r! echo Modified: `date "+\%Y-\%m-\%d"`<CR>kddi
 
+" Window changing hotkeys
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
