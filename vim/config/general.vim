@@ -45,5 +45,8 @@ set foldnestmax=10      "deepest fold is 10 levels
 set foldlevel=0
 
 set wrap linebreak
+au FilterWritePre * if &diff | set wrap | endif
 
 set backspace=indent,eol,start
+
+let mapleader=" "
