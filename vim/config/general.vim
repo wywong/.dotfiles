@@ -36,6 +36,7 @@ set wildmode=longest:full
 set wildmenu
 
 set hlsearch
+set incsearch
 
 set cul
 
@@ -44,3 +45,5 @@ set foldnestmax=10      "deepest fold is 10 levels
 set foldlevel=0
 
 set wrap linebreak
+
+set backspace=indent,eol,start
