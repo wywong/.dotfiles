@@ -38,7 +38,11 @@ set wildmenu
 set hlsearch
 set incsearch
 
-set cul
+augroup CursorLine
+  au!
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  au WinLeave * setlocal nocursorline
+augroup END
 
 set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
