@@ -19,9 +19,9 @@ nnoremap <F6> O<ESC>:r! echo Modified: `date "+\%Y-\%m-\%d"`<CR>kdd
 inoremap <F6> <ESC>O<ESC>:r! echo Modified: `date "+\%Y-\%m-\%d"`<CR>kddi
 
 " Window changing hotkeys
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <Leader>h <C-w>h
+nnoremap <Leader>j <C-w>j
+nnoremap <Leader>k <C-w>k
+nnoremap <Leader>l <C-w>l
 
 nnoremap <Leader>diff :diffthis<CR>
