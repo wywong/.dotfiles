@@ -54,3 +54,6 @@ au FilterWritePre * if &diff | set wrap | endif
 set backspace=indent,eol,start
 
 let mapleader=" "
+
+set backupdir=~/.vim/swp//
+set directory=~/.vim/swp//
