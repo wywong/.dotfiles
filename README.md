@@ -3,6 +3,7 @@ git clone https://github.com/wywong/.dotfiles;
 cd .dotfiles;
 git submodule update --init;
 cd ~;
+rm -r .vim;
 ln -sf .dotfiles/vim .vim;
 ln -sf .dotfiles/vimrc .vimrc;
 ln -sf .dotfiles/bash/.bashrc .bashrc;
