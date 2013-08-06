@@ -4,5 +4,5 @@
 	name = Wilson Y. Wong
 	email = wilsonwong578@gmail.com
 [alias]
-    co = checkout
-    br = branch
+  co = checkout
+  br = branch
