@@ -1,45 +1,50 @@
-"statusline setup
+"stl setup
 set noruler
 set laststatus=2
 
-set statusline =%#identifier#
-set statusline+=[%t]    "tail of the filename
-set statusline+=%*
+" stl == statusline 
+
+set stl =%#identifier#
+set stl+=[%t]    "tail of the filename
+set stl+=%*
 
 " Fugitive
-set statusline+=%#identifier#
-set statusline+=%{fugitive#statusline()}
-set statusline+=%*
+set stl+=%#identifier#
+set stl+=%{fugitive#statusline()}
+set stl+=%*
 
 "help file flag
-set statusline+=%h
+set stl+=%h
 
 "read only flag
-set statusline+=%#identifier#
-set statusline+=%r
-set statusline+=%*
+set stl+=%#identifier#
+set stl+=%r
+set stl+=%*
+
+" Truncate statusline here if too long
+set stl+=%<
 
 "modified flag
-set statusline+=%#identifier#
-set statusline+=%m
-set statusline+=%*
+set stl+=%#identifier#
+set stl+=%m
+set stl+=%*
 "
 "display a warning if &paste is set
-set statusline+=%#error#
-set statusline+=%{&paste?'[paste]':''}
-set statusline+=%*
+set stl+=%#error#
+set stl+=%{&paste?'[paste]':''}
+set stl+=%*
 
 " left and right separator
-set statusline+=%=
+set stl+=%=
 
 " Full path
-set statusline+=%#identifier#
-set statusline+=[%F]    
-set statusline+=%*
+set stl+=%#identifier#
+set stl+=[%F]    
+set stl+=%*
 
-set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
-set statusline+=%{&ff}] "file format
+set stl+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+set stl+=%{&ff}] "file format
 
 " column and lines numbers
-set statusline+=[%c,
-set statusline+=%l/%L]
+set stl+=[%c,
+set stl+=%l/%L]
