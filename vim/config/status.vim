@@ -21,9 +21,6 @@ set stl+=%#identifier#
 set stl+=%r
 set stl+=%*
 
-" Truncate statusline here if too long
-set stl+=%<
-
 "modified flag
 set stl+=%#identifier#
 set stl+=%m
@@ -33,6 +30,9 @@ set stl+=%*
 set stl+=%#error#
 set stl+=%{&paste?'[paste]':''}
 set stl+=%*
+
+" Truncate statusline here if too long
+set stl+=%<
 
 " left and right separator
 set stl+=%=
