@@ -1,15 +1,16 @@
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set runtimepath+=~/.vim/bundle/neobundle/
 
-Bundle 'gmarik/vundle'
+call neobundle#rc(expand('~/.vim/bundle/'))
 
-Bundle 'airblade/vim-gitgutter'
-Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'vim-ruby/vim-ruby'
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'kien/rainbow_parentheses.vim'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'vim-ruby/vim-ruby'
 
 filetype plugin indent on
 
