@@ -9,4 +9,4 @@ ln -sf .dotfiles/vimrc .vimrc;
 ln -sf .dotfiles/bash/.bashrc .bashrc;
 ln -sf .dotfiles/bash/.bash_profile .bash_profile;
 ln -sf .dotfiles/git/.gitconfig .gitconfig;
-vim +BundleInstall +qall;
+vim +NeoBundleInstall +qall;
