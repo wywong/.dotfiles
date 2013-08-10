@@ -53,5 +53,5 @@ set backspace=indent,eol,start
 
 let mapleader=" "
 
-set backupdir=~/.vim/swp//
-set directory=~/.vim/swp//
+let &backupdir=expand($VIMFILES) . "/swp//"
+let &directory=expand($VIMFILES) . "/swp//"
