@@ -1,12 +1,17 @@
 " turn syntax highlighting on
 syntax enable
 if has('gui_running')
-    " GUI colors
-    colorscheme mustang
+  " GUI colors
+  colorscheme mustang
+  if has("gui_gtk2")
+    set guifont=Inconsolata\ 12
+  elseif has("gui_win32")
+    set guifont=Consolas:h10:cANSI
+  endif
 else
-    " Non-GUI (terminal) colors
-    set t_Co=256
-    colorscheme wombat256
+  " Non-GUI (terminal) colors
+  set t_Co=256
+  colorscheme wombat256
 endif
 
 set enc=utf-8
