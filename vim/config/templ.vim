@@ -39,13 +39,14 @@ function! CreateRubySourceFile()
   silent! exe "%s/%FILENAME%/"expand("<afile>")"/g"
 endfunction
 
-autocmd BufNewFile main.c 0r $VIMFILES/skel/main.c
-autocmd BufNewFile main.cpp 0r $VIMFILES/skel/main.cpp
-autocmd BufNewFile *.c call CreateCSourceFile()
-autocmd BufNewFile *.cpp call CreateCPPSourceFile()
-autocmd BufNewFile *.h call CreateHeaderFile()
-autocmd BufNewFile *.hpp call CreateHPPFile()
-autocmd BufNewFile *.rb call CreateRubySourceFile()
-autocmd BufNewFile makefile 0r $VIMFILES/skel/maketemp
-autocmd BufNewFile Makefile 0r $VIMFILES/skel/maketemp
-
+augroup file_templates
+  autocmd BufNewFile main.c 0r $VIMFILES/skel/main.c
+  autocmd BufNewFile main.cpp 0r $VIMFILES/skel/main.cpp
+  autocmd BufNewFile *.c call CreateCSourceFile()
+  autocmd BufNewFile *.cpp call CreateCPPSourceFile()
+  autocmd BufNewFile *.h call CreateHeaderFile()
+  autocmd BufNewFile *.hpp call CreateHPPFile()
+  autocmd BufNewFile *.rb call CreateRubySourceFile()
+  autocmd BufNewFile makefile 0r $VIMFILES/skel/maketemp
+  autocmd BufNewFile Makefile 0r $VIMFILES/skel/maketemp
+augroup end

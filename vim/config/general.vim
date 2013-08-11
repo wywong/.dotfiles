@@ -30,7 +30,10 @@ set softtabstop=2
 set shiftwidth=2     " indent also with 2 spaces
 set expandtab        " expand tabs to spaces
 
-autocmd FileType make set noexpandtab
+augroup Filetype_Make
+  autocmd!
+  autocmd FileType make set noexpandtab
+augroup END
 
 set textwidth=160
 set number
@@ -55,7 +58,10 @@ set foldnestmax=10      "deepest fold is 10 levels
 set foldlevel=0
 
 set wrap linebreak
-au FilterWritePre * if &diff | set wrap | endif
+augroup vimdiff_auto
+  au!
+  au FilterWritePre * if &diff | set wrap | endif
+augroup END
 
 set backspace=indent,eol,start
 

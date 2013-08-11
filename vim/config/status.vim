@@ -4,8 +4,9 @@ set laststatus=2
 
 " stl == statusline 
 
+"tail of the filename
 set stl =%#identifier#
-set stl+=[%t]    "tail of the filename
+set stl+=[%t]
 set stl+=%*
 
 " Fugitive

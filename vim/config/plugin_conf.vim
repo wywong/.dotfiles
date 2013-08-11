@@ -14,18 +14,27 @@ NeoBundle 'vim-ruby/vim-ruby'
 " GitGutter
 if has("unix")
   NeoBundle 'airblade/vim-gitgutter'
-  autocmd VimEnter * GitGutterEnable
+  augroup GitGutter_auto
+    autocmd!
+    autocmd VimEnter * GitGutterEnable
+  augroup END
 endif
 
 filetype plugin indent on
 
-" rainbow_parentheses
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+augroup rainbow_parens_auto
+  " rainbow_parentheses
+  au!
+  au VimEnter * RainbowParenthesesToggle
+  au Syntax * RainbowParenthesesLoadRound
+  au Syntax * RainbowParenthesesLoadSquare
+  au Syntax * RainbowParenthesesLoadBraces
+augroup END
 
-" NERDTree
-autocmd VimEnter * if !argc() | NERDTree | endif " Start NERDTree if no file specified
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
+augroup NERDTree_auto
+  " NERDTree
+  autocmd!
+  autocmd VimEnter * if !argc() | NERDTree | endif " Start NERDTree if no file specified
+  autocmd bufenter *
+  \ if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+augroup END
