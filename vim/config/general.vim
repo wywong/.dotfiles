@@ -1,3 +1,5 @@
+set nocompatible
+
 " turn syntax highlighting on
 syntax enable
 if has('gui_running')
@@ -18,7 +20,8 @@ set enc=utf-8
 set fenc=utf-8
 set termencoding=utf-8
 
-set nocompatible
+set autoread
+
 set autoindent
 set smartindent
 
