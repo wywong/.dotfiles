@@ -1,10 +1,10 @@
 [core]
-	editor = vim
+  editor = vim
 [user]
-	name = Wilson Y. Wong
-	email = wilsonwong578@gmail.com
+  name = Wilson Y. Wong
+  email = wilson.young.wong@gmail.com
 [alias]
   co = checkout
   br = branch
 [merge]
-	tool = vimdiff
+  tool = vimdiff
