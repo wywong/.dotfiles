@@ -6,7 +6,7 @@ if has('gui_running')
   " GUI colors
   colorscheme wombat
   if has("gui_gtk2")
-    set guifont=Inconsolata\ 10
+    set guifont=Inconsolata\ 11
   elseif has("gui_win32")
     set guifont=Consolas:h10:cANSI
   endif
