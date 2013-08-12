@@ -4,7 +4,7 @@ set nocompatible
 syntax enable
 if has('gui_running')
   " GUI colors
-  colorscheme mustang
+  colorscheme wombat
   if has("gui_gtk2")
     set guifont=Inconsolata\ 10
   elseif has("gui_win32")
