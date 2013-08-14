@@ -1,5 +1,5 @@
 filetype off
-set runtimepath+=$VIMFILES/bundle/neobundle/
+set runtimepath+=$VIMFILES/bundle/neobundle.vim/
 
 call neobundle#rc((expand($VIMFILES) . "/bundle/"))
 
