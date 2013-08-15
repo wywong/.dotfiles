@@ -5,6 +5,7 @@ call neobundle#rc((expand($VIMFILES) . "/bundle/"))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'kien/rainbow_parentheses.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-fugitive'
@@ -12,13 +13,10 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'vim-ruby/vim-ruby'
 
 " GitGutter
-if has("unix")
-  NeoBundle 'airblade/vim-gitgutter'
-  augroup GitGutter_auto
-    autocmd!
-    autocmd VimEnter * GitGutterEnable
-  augroup END
-endif
+augroup GitGutter_auto
+  autocmd!
+  autocmd VimEnter * GitGutterEnable
+augroup END
 
 filetype plugin indent on
 
