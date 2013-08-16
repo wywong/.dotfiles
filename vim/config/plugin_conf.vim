@@ -32,6 +32,7 @@ augroup END
 augroup NERDTree_auto
   " NERDTree
   autocmd!
+  let NERDTreeBookmarksFile = expand($VIMFILES) . '/tmp/.NERDTreeBookmarks'
   autocmd VimEnter * if !argc() | NERDTree | endif " Start NERDTree if no file specified
   autocmd bufenter *
   \ if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif

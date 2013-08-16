@@ -67,5 +67,5 @@ set backspace=indent,eol,start
 
 let mapleader=" "
 
-let &backupdir=expand($VIMFILES) . "/swp//"
-let &directory=expand($VIMFILES) . "/swp//"
+let &backupdir=expand($VIMFILES) . "/tmp//"
+let &directory=expand($VIMFILES) . "/tmp//"
