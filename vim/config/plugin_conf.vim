@@ -37,3 +37,9 @@ augroup NERDTree_auto
   autocmd bufenter *
   \ if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 augroup END
+
+" Fugitive
+augroup Fugitive_auto
+  autocmd!
+  autocmd BufReadPost fugitive://* set bufhidden=delete
+augroup END

@@ -25,3 +25,4 @@ nnoremap <Leader>k <C-w>k
 nnoremap <Leader>l <C-w>l
 
 nnoremap <Leader>diff :diffthis<CR>
+nnoremap <Leader>up :diffupdate<CR>
