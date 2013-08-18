@@ -8,3 +8,5 @@
   br = branch
 [merge]
   tool = vimdiff
+[color]
+	ui = true
