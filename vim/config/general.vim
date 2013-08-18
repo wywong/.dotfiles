@@ -37,6 +37,9 @@ augroup END
 
 set textwidth=160
 set number
+if v:version >= 703
+  set relativenumber
+endif
 set showmatch
 " intelligent comments
 set comments=sl:/*,mb:\ *,elx:\ */
