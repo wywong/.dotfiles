@@ -32,3 +32,12 @@ alias df='df -h'
 alias du='du -h'
 
 echo Current Time: `date`
+
+# add to path if does not already exist
+pathadd() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="${PATH:+"$1:$PATH"}"
+    fi
+}
+
+pathadd $HOME/bin
