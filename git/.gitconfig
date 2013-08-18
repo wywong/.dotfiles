@@ -2,11 +2,11 @@
   editor = vim
 [user]
   name = Wilson Y. Wong
-  email = wilson.young.wong@gmail.com
+  email = Wilson.Young.Wong@gmail.com
 [alias]
   co = checkout
   br = branch
 [merge]
   tool = vimdiff
 [color]
-	ui = true
+  ui = true
