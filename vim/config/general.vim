@@ -37,8 +37,13 @@ augroup END
 
 set textwidth=160
 set number
+set scrolloff=5
 if v:version >= 703
-  set relativenumber
+  augroup relNumbers
+    autocmd!
+    autocmd VimEnter,WinEnter,BufWinEnter * :setlocal relativenumber
+    autocmd WinLeave * :setlocal norelativenumber
+  augroup END
 endif
 set showmatch
 " intelligent comments
