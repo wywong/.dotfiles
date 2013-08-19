@@ -14,6 +14,7 @@ NeoBundle 'vim-ruby/vim-ruby'
 
 " GitGutter
 augroup GitGutter_auto
+  let g:gitgutter_realtime = 0
   autocmd!
   autocmd VimEnter * GitGutterEnable
 augroup END
