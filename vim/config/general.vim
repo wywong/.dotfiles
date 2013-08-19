@@ -14,6 +14,7 @@ else
   " Non-GUI (terminal) colors
   set t_Co=256
   colorscheme wombat256
+  hi CursorLine term=NONE cterm=NONE
 endif
 
 set enc=utf-8
