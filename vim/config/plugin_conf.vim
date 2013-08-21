@@ -1,10 +1,21 @@
 filetype off
-set runtimepath+=$VIMFILES/bundle/neobundle.vim/
+if has('vim_starting')
+  set runtimepath+=$VIMFILES/bundle/neobundle.vim/
+endif
 
 call neobundle#rc((expand($VIMFILES) . "/bundle/"))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+NeoBundle 'Shougo/vimproc.vim', {
+      \ 'build' : {
+      \     'windows' : 'make -f make_mingw32.mak',
+      \     'cygwin' : 'make -f make_cygwin.mak',
+      \     'mac' : 'make -f make_mac.mak',
+      \     'unix' : 'make -f make_unix.mak',
+      \    },
+      \ }
+NeoBundle 'Shougo/unite.vim'
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'kien/rainbow_parentheses.vim'
 NeoBundle 'scrooloose/nerdtree'
@@ -44,3 +55,6 @@ augroup Fugitive_auto
   autocmd!
   autocmd BufReadPost fugitive://* set bufhidden=delete
 augroup END
+
+" Unite
+source $VIMFILES/config/unite_config.vim
