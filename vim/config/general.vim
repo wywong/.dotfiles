@@ -23,6 +23,8 @@ set termencoding=utf-8
 
 set autoread
 
+set clipboard=unnamed
+
 set autoindent
 set smartindent
 
