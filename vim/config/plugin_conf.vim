@@ -7,9 +7,9 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'kien/rainbow_parentheses.vim'
-NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
+NeoBundleLazy 'scrooloose/nerdtree'
 NeoBundleLazy 'vim-ruby/vim-ruby', {'autoload':{'filetypes':['ruby']}}
 
 " GitGutter
