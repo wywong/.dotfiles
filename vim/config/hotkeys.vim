@@ -26,3 +26,5 @@ nnoremap <Leader>l <C-w>l
 
 nnoremap <Leader>diff :diffthis<CR>
 nnoremap <Leader>up :diffupdate<CR>
+
+nnoremap <Leader>s :sort<CR>
