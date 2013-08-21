@@ -18,6 +18,9 @@ nnoremap <F6> O<ESC>:r! echo Modified: `date "+\%Y-\%m-\%d"`<CR>kdd
 " insert current time and date
 inoremap <F6> <ESC>O<ESC>:r! echo Modified: `date "+\%Y-\%m-\%d"`<CR>kddi
 
+" disable ex mode
+noremap Q <nop>
+
 " Window changing hotkeys
 nnoremap <Leader>h <C-w>h
 nnoremap <Leader>j <C-w>j
