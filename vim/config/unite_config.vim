@@ -8,6 +8,9 @@ augroup HLTrailWS
   autocmd BufWinLeave * if &modifiable && &ft!='unite' | call clearmatches() | endif
 augroup END
 
+let g:unite_source_history_yank_enable = 1
+nnoremap <space>y :Unite history/yank<cr>
+
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
 if has('win32')
