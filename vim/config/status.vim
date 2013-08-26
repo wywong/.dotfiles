@@ -2,7 +2,7 @@
 set noruler
 set laststatus=2
 
-" stl == statusline 
+" stl == statusline
 
 "tail of the filename
 set stl =%#identifier#
@@ -40,7 +40,7 @@ set stl+=%=
 
 " Full path
 set stl+=%#identifier#
-set stl+=[%F]    
+set stl+=[%F]
 set stl+=%*
 
 set stl+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
