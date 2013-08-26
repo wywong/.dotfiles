@@ -9,7 +9,7 @@ augroup HLTrailWS
 augroup END
 
 let g:unite_source_history_yank_enable = 1
-nnoremap <space>y :Unite history/yank<cr>
+nnoremap <leader>y :Unite history/yank<CR>
 
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
@@ -26,3 +26,6 @@ endif
 nnoremap <leader>bc :<C-u>Unite -no-split -buffer-name=buffer buffer<CR>
 nnoremap <leader>bs :<C-u>Unite -buffer-name=buffer buffer -default-action=split<CR>
 nnoremap <leader>bv :<C-u>Unite -buffer-name=buffer buffer -default-action=vsplit<CR>
+
+nnoremap <leader>ms :<C-u>Unite file_mru -default-action=split<CR>
+nnoremap <leader>mv :<C-u>Unite file_mru -default-action=vsplit<CR>
