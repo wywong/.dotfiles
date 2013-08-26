@@ -33,6 +33,16 @@ set softtabstop=2
 set shiftwidth=2     " indent also with 2 spaces
 set expandtab        " expand tabs to spaces
 
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+augroup HLTrailWS
+  autocmd!
+  autocmd BufWinEnter * if &modifiable && &ft!='unite' | match ExtraWhitespace /\s\+$/ | endif
+  autocmd InsertEnter * if &modifiable && &ft!='unite' | match ExtraWhitespace /\s\+\%#\@<!$/ | endif
+  autocmd InsertLeave * if &modifiable && &ft!='unite' | match ExtraWhitespace /\s\+$/ | endif
+  autocmd BufWinLeave * if &modifiable && &ft!='unite' | call clearmatches() | endif
+augroup END
+
 augroup Filetype_Make
   autocmd!
   autocmd FileType make set noexpandtab
