@@ -17,11 +17,14 @@ NeoBundle 'Shougo/vimproc.vim', {
       \ }
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'kien/rainbow_parentheses.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
 NeoBundleLazy 'vim-ruby/vim-ruby', {'autoload':{'filetypes':['ruby']}}
+
+filetype plugin indent on
 
 " GitGutter
 augroup GitGutter_auto
@@ -30,7 +33,10 @@ augroup GitGutter_auto
   autocmd VimEnter * GitGutterEnable
 augroup END
 
-filetype plugin indent on
+" LightLine
+set noruler
+set laststatus=2
+source $VIMFILES/config/lline_config.vim
 
 " rainbow_parentheses
 augroup rainbow_parens_auto
