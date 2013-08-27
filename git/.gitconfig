@@ -1,5 +1,5 @@
 [core]
-  editor = vim
+  editor = vi -u "~/.vimrc_min" # use minimal vimrc
 [user]
   name = Wilson Y. Wong
   email = Wilson.Young.Wong@gmail.com

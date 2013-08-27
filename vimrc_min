@@ -1,0 +1,143 @@
+" No plugins
+set nocompatible
+
+set enc=utf-8
+set fenc=utf-8
+set termencoding=utf-8
+
+if has('win32')
+  set shellslash
+endif
+
+" turn syntax highlighting on
+syntax enable
+if has('gui_running')
+  " GUI colors
+  colorscheme wombat
+  if has("gui_gtk2")
+    set guifont=Inconsolata\ 11
+  elseif has("gui_win32")
+    set guifont=Consolas:h10:cANSI
+  endif
+else
+  " Non-GUI (terminal) colors
+  set t_Co=256
+  colorscheme wombat256
+  hi CursorLine term=NONE cterm=NONE
+endif
+
+set autoread
+
+set clipboard=unnamed
+
+set autoindent
+set smartindent
+
+set tabstop=2        " tab width is 2 spaces
+set softtabstop=2
+set shiftwidth=2     " indent also with 2 spaces
+set expandtab        " expand tabs to spaces
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+augroup HLTrailWS
+  autocmd!
+  autocmd BufWinEnter * if &modifiable  | match ExtraWhitespace /\s\+$/ | endif
+  autocmd InsertEnter * if &modifiable  | match ExtraWhitespace /\s\+\%#\@<!$/ | endif
+  autocmd InsertLeave * if &modifiable  | match ExtraWhitespace /\s\+$/ | endif
+  autocmd BufWinLeave * if &modifiable  | call clearmatches() | endif
+augroup END
+
+set number
+set scrolloff=5
+if v:version >= 703
+  augroup relNumbers
+    autocmd!
+    autocmd VimEnter,WinEnter,BufWinEnter * :setlocal relativenumber
+    autocmd WinLeave * :setlocal norelativenumber
+  augroup END
+endif
+
+set showmatch
+set wildmode=longest:full
+set wildignore=*.o,*.obj,*.swp,\.git
+set wildmenu
+
+set wrap linebreak
+
+set backspace=indent,eol,start
+
+let mapleader=" "
+
+let &backupdir=expand($VIMFILES) . "/tmp//"
+let &directory=expand($VIMFILES) . "/tmp//"
+
+"stl setup
+set noruler
+set laststatus=2
+
+" stl == statusline
+
+"tail of the filename
+set stl =%#identifier#
+set stl+=[%t]
+set stl+=%*
+
+"help file flag
+set stl+=%h
+
+"read only flag
+set stl+=%#identifier#
+set stl+=%r
+set stl+=%*
+
+"modified flag
+set stl+=%#identifier#
+set stl+=%m
+set stl+=%*
+"
+"display a warning if &paste is set
+set stl+=%#error#
+set stl+=%{&paste?'[paste]':''}
+set stl+=%*
+
+" Truncate statusline here if too long
+set stl+=%<
+
+" left and right separator
+set stl+=%=
+
+" Full path
+set stl+=%#identifier#
+set stl+=[%F]
+set stl+=%*
+
+set stl+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+set stl+=%{&ff}] "file format
+
+" column and lines numbers
+set stl+=[%l/%L,
+set stl+=%c]
+
+" Enhanced keyboard mappings
+" in normal mode F2 will save the file
+nnoremap <F2> :w<CR>
+" in insert mode F2 will exit insert, save, enters insert again
+inoremap <F2> <ESC>:w<CR>a
+" toggle expandtab
+nnoremap <F3> :set noexpandtab!<CR>
+" build using makeprg with <F7>
+nnoremap <F5> :make<CR>
+" build using makeprg with <F7>, in insert mode exit to command mode, save and compile
+inoremap <F5> <ESC>:w<CR>:make<CR>
+" build using makeprg with <S-F7>
+nnoremap <S-F5> :make clean all<CR>
+
+" disable ex mode
+noremap Q <nop>
+
+" Window changing hotkeys
+nnoremap <Leader>h <C-w>h
+nnoremap <Leader>j <C-w>j
+nnoremap <Leader>k <C-w>k
+nnoremap <Leader>l <C-w>l

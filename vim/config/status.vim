@@ -47,5 +47,5 @@ set stl+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
 set stl+=%{&ff}] "file format
 
 " column and lines numbers
-set stl+=[%c,
-set stl+=%l/%L]
+set stl+=[%l/%L,
+set stl+=%c]

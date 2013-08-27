@@ -13,6 +13,11 @@ set -o vi
 
 set -o noclobber
 
+# source minimal vimrc
+alias vi='vim -u "~/.vimrc_min"'
+# source full vimrc
+alias vim='vim -u "~/.vimrc"'
+
 alias R='R --no-save'
 
 alias rm='rm -i'
@@ -26,7 +31,6 @@ alias la='ls -A'
 alias l='ls -CFlht'
 
 alias info='info --vi-keys'
-
 
 alias df='df -h'
 alias du='du -h'

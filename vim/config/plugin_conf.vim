@@ -17,7 +17,6 @@ NeoBundle 'Shougo/vimproc.vim', {
       \ }
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'kien/rainbow_parentheses.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-fugitive'
@@ -32,11 +31,6 @@ augroup GitGutter_auto
   autocmd!
   autocmd VimEnter * GitGutterEnable
 augroup END
-
-" LightLine
-set noruler
-set laststatus=2
-source $VIMFILES/config/lline_config.vim
 
 " rainbow_parentheses
 augroup rainbow_parens_auto
