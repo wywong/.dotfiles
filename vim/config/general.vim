@@ -58,11 +58,13 @@ if v:version >= 703
     autocmd WinLeave * :setlocal norelativenumber
   augroup END
 endif
+
 set showmatch
 " intelligent comments
 set comments=sl:/*,mb:\ *,elx:\ */
 " use intelligent file completion like in the bash
 set wildmode=longest:full
+set wildignore=*.o,*.obj,*.swp,\.git
 set wildmenu
 
 set hlsearch

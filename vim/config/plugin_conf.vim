@@ -50,6 +50,7 @@ augroup END
 " NERDTree
 augroup NERDTree_auto
   autocmd!
+  let NERDTreeIgnore = ['\.o$','\.obj$','\.swp$','\.git']
   let NERDTreeBookmarksFile = expand($VIMFILES) . '/tmp/.NERDTreeBookmarks'
   autocmd VimEnter * if !argc() | NERDTree | endif " Start NERDTree if no file specified
   autocmd bufenter *

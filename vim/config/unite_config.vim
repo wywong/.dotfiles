@@ -2,6 +2,14 @@ let g:unite_source_history_yank_enable = 1
 nnoremap <leader>y :Unite history/yank<CR>
 
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
+call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
+      \ 'ignore_pattern', join([
+      \ '\.git/',
+      \ '\.swp$',
+      \ '\.o$',
+      \ '\.obj$',
+      \ 'tmp/',
+      \ ], '\|'))
 
 if has('win32')
   nnoremap <leader>fc :<C-u>Unite -no-split -start-insert -buffer-name=files file_rec<CR>
