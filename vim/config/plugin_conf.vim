@@ -17,8 +17,8 @@ NeoBundle 'Shougo/vimproc.vim', {
       \ }
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'airblade/vim-gitgutter'
+NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'kien/rainbow_parentheses.vim'
-NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
 NeoBundleLazy 'vim-ruby/vim-ruby', {'autoload':{'filetypes':['ruby']}}
@@ -32,6 +32,12 @@ augroup GitGutter_auto
   autocmd VimEnter * GitGutterEnable
 augroup END
 
+" LightLine
+set noruler
+set laststatus=2
+set lazyredraw
+source $VIMFILES/config/lline_config.vim
+
 " rainbow_parentheses
 augroup rainbow_parens_auto
   au!
@@ -39,16 +45,6 @@ augroup rainbow_parens_auto
   au Syntax * RainbowParenthesesLoadRound
   au Syntax * RainbowParenthesesLoadSquare
   au Syntax * RainbowParenthesesLoadBraces
-augroup END
-
-" NERDTree
-augroup NERDTree_auto
-  autocmd!
-  let NERDTreeIgnore = ['\.o$','\.obj$','\.swp$','\.git']
-  let NERDTreeBookmarksFile = expand($VIMFILES) . '/tmp/.NERDTreeBookmarks'
-  autocmd VimEnter * if !argc() | NERDTree | endif " Start NERDTree if no file specified
-  autocmd bufenter *
-  \ if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 augroup END
 
 " Fugitive

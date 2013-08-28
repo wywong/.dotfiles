@@ -72,11 +72,10 @@ let mapleader=" "
 let &backupdir=expand($VIMFILES) . "/tmp//"
 let &directory=expand($VIMFILES) . "/tmp//"
 
+" stl == statusline
 "stl setup
 set noruler
 set laststatus=2
-
-" stl == statusline
 
 "tail of the filename
 set stl =%#identifier#
