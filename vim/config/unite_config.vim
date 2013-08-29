@@ -1,5 +1,6 @@
 let g:unite_force_overwrite_statusline = 0
 let g:unite_source_history_yank_enable = 1
+let g:unite_data_directory = expand($VIMFILES). '/tmp/unite'
 nnoremap <leader>y :Unite -resume history/yank<CR>
 
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
@@ -26,5 +27,6 @@ nnoremap <leader>bc :<C-u>Unite -resume -no-split -buffer-name=buffer buffer<CR>
 nnoremap <leader>bs :<C-u>Unite -resume -buffer-name=buffer buffer -default-action=split<CR>
 nnoremap <leader>bv :<C-u>Unite -resume -buffer-name=buffer buffer -default-action=vsplit<CR>
 
+nnoremap <leader>ms :<C-u>Unite -resume file_mru<CR>
 nnoremap <leader>ms :<C-u>Unite -resume file_mru -default-action=split<CR>
 nnoremap <leader>mv :<C-u>Unite -resume file_mru -default-action=vsplit<CR>
