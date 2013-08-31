@@ -25,6 +25,9 @@ NeoBundleLazy 'vim-ruby/vim-ruby', {'autoload':{'filetypes':['ruby']}}
 
 filetype plugin indent on
 
+" netrw
+let g:netrw_liststyle = 3
+
 " Signify
 source $VIMFILES/config/sy_config.vim
 

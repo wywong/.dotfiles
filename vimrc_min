@@ -1,4 +1,3 @@
-" No plugins
 set nocompatible
 
 set enc=utf-8
@@ -71,6 +70,9 @@ let mapleader=" "
 
 let &backupdir=expand($VIMFILES) . "/tmp//"
 let &directory=expand($VIMFILES) . "/tmp//"
+
+" netrw settings
+let g:netrw_liststyle = 3
 
 " stl == statusline
 "stl setup
