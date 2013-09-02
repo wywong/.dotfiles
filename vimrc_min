@@ -137,6 +137,10 @@ nnoremap <S-F5> :make clean all<CR>
 " disable ex mode
 noremap Q <nop>
 
+" Reselect visual block after indent/outdent
+vnoremap < <gv
+vnoremap > >gv
+
 " Window changing hotkeys
 nnoremap <Leader>h <C-w>h
 nnoremap <Leader>j <C-w>j
