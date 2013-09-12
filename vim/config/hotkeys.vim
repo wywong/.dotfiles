@@ -1,8 +1,4 @@
 " Enhanced keyboard mappings
-" in normal mode F2 will save the file
-nnoremap <F2> :w<CR>
-" in insert mode F2 will exit insert, save, enters insert again
-inoremap <F2> <ESC>:w<CR>a
 " toggle expandtab
 nnoremap <F3> :set noexpandtab!<CR>
 " build using makeprg with <F7>
