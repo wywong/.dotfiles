@@ -18,9 +18,11 @@ NeoBundle 'Shougo/vimproc.vim', {
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'kien/rainbow_parentheses.vim'
+NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', {'autoload':{'filetypes':['tex']}}
 NeoBundle 'mhinz/vim-signify'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-surround'
+
 NeoBundleLazy 'vim-ruby/vim-ruby', {'autoload':{'filetypes':['ruby']}}
 
 filetype plugin indent on
@@ -36,6 +38,9 @@ set noruler
 set laststatus=2
 set lazyredraw
 source $VIMFILES/config/lline_config.vim
+
+" Latex-Box
+let g:LatexBox_output_type = 'pdf'
 
 " rainbow_parentheses
 augroup rainbow_parens_auto
