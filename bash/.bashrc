@@ -25,7 +25,12 @@ alias mv='mv -i'
 alias ln='ln -i'
 alias cp='cp -i'
 
-alias ls='ls --color'
+
+COLOR_CMDS=(ls grep)
+for cmd in ${COLOR_CMDS[@]}; do
+  alias "$cmd=$cmd --color=auto"
+done
+
 alias ll='ls -alht'
 alias la='ls -A'
 alias l='ls -CFlht'
