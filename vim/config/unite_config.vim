@@ -33,3 +33,5 @@ nnoremap <leader>ms :<C-u>Unite -resume -buffer-name=recent file_mru -default-ac
 nnoremap <leader>mv :<C-u>Unite -resume -buffer-name=recent file_mru -default-action=vsplit<CR>
 
 nnoremap <leader>/ :<C-u>Unite grep:. -default-action=split<CR>
+
+nnoremap <leader>o :<C-u>Unite outline -winheight=20<CR>
