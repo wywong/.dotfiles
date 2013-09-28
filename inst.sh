@@ -1,7 +1,7 @@
 cd ~;
 git clone https://github.com/wywong/.dotfiles;
 cd .dotfiles;
-git submodule update --init;
+git clone https://github.com/Shougo/neobundle.vim ~/.dotfiles/vim/bundle/neobundle.vim;
 cd ~;
 rm -r .vim;
 ln -sf .dotfiles/vim .vim;
