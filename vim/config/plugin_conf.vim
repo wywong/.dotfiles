@@ -43,7 +43,8 @@ source $VIMFILES/config/lline_config.vim
 " Latex-Box
 let g:LatexBox_output_type = 'pdf'
 
-" rainbow_parentheses
+" Rainbow Parentheses
+nnoremap <leader>rp :RainbowParenthesesToggle<CR>
 augroup rainbow_parens_auto
   au!
   au VimEnter * RainbowParenthesesToggle
