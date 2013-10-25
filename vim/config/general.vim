@@ -23,8 +23,6 @@ set termencoding=utf-8
 
 set autoread
 
-set clipboard=unnamed
-
 set autoindent
 set smartindent
 
@@ -41,6 +39,7 @@ augroup HLTrailWS
   autocmd InsertEnter * if &modifiable && &ft!='unite' | match ExtraWhitespace /\s\+\%#\@<!$/ | endif
   autocmd InsertLeave * if &modifiable && &ft!='unite' | match ExtraWhitespace /\s\+$/ | endif
   autocmd BufWinLeave * if &modifiable && &ft!='unite' | call clearmatches() | endif
+  autocmd BufWritePre * :%s/\s\+$//e " delete trailing whitespace on save
 augroup END
 
 augroup Filetype_Make

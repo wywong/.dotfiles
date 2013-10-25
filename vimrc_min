@@ -27,8 +27,6 @@ endif
 
 set autoread
 
-set clipboard=unnamed
-
 set autoindent
 set smartindent
 
@@ -45,6 +43,7 @@ augroup HLTrailWS
   autocmd InsertEnter * if &modifiable  | match ExtraWhitespace /\s\+\%#\@<!$/ | endif
   autocmd InsertLeave * if &modifiable  | match ExtraWhitespace /\s\+$/ | endif
   autocmd BufWinLeave * if &modifiable  | call clearmatches() | endif
+  autocmd BufWritePre * :%s/\s\+$//e " delete trailing whitespace on save
 augroup END
 
 set number
