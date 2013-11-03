@@ -1,4 +1,4 @@
-/* Filename: %FILENAME% */
+/* Filename:%FILENAME%*/
 
 #include "%FILE%"
 

@@ -14,7 +14,7 @@ clean:
 		rm -f *.o $(EXECUTABLE)
 
 run:
-		./
+		./$(EXECUTABLE)
 
 .c.o:
 		$(CC) $(CFLAGS) $< -o $@
