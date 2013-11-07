@@ -91,3 +91,11 @@ let mapleader=" "
 
 let &backupdir=expand($VIMFILES) . "/tmp//"
 let &directory=expand($VIMFILES) . "/tmp//"
+
+" CursorHold triggered after 2s
+set updatetime=2000
+" Clear the last search after 2s
+augroup clear_last_search
+  autocmd!
+  au CursorHold * :let @/=""
+augroup END
