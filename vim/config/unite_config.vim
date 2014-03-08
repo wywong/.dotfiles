@@ -28,9 +28,9 @@ nnoremap <leader>bc :<C-u>Unite -resume -quick-match -no-split -buffer-name=buff
 nnoremap <leader>bs :<C-u>Unite -resume -quick-match -buffer-name=buffer buffer -default-action=split<CR>
 nnoremap <leader>bv :<C-u>Unite -resume -quick-match -buffer-name=buffer buffer -default-action=vsplit<CR>
 
-nnoremap <leader>mc :<C-u>Unite -resume -buffer-name=recent file_mru<CR>
-nnoremap <leader>ms :<C-u>Unite -resume -buffer-name=recent file_mru -default-action=split<CR>
-nnoremap <leader>mv :<C-u>Unite -resume -buffer-name=recent file_mru -default-action=vsplit<CR>
+"nnoremap <leader>mc :<C-u>Unite -resume -buffer-name=recent file_mru<CR>
+"nnoremap <leader>ms :<C-u>Unite -resume -buffer-name=recent file_mru -default-action=split<CR>
+"nnoremap <leader>mv :<C-u>Unite -resume -buffer-name=recent file_mru -default-action=vsplit<CR>
 
 nnoremap <leader>/ :<C-u>Unite grep:. -default-action=split<CR>
 
