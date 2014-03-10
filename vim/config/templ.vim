@@ -13,7 +13,6 @@ function! CreateHPPFile()
   silent! exe "%s/%INCLUDEPROTECTION%/__".toupper(expand("<afile>:r"))."_HPP__/g"
 endfunction
 
-
 function! CreateCSourceFile()
   if expand("<afile>") == "main.c"
       return

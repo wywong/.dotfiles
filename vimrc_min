@@ -1,10 +1,8 @@
+" set nocompatible for when I run vim with -u
 set nocompatible
 
-set enc=utf-8
-set fenc=utf-8
-set termencoding=utf-8
-
 if has('win32')
+  " use forward slashes
   set shellslash
 endif
 
@@ -21,20 +19,37 @@ if has('gui_running')
 else
   " Non-GUI (terminal) colors
   set t_Co=256
+  " Set colorscheme
   colorscheme wombat256
+  " Do not underline cursor line
   hi CursorLine term=NONE cterm=NONE
 endif
 
+" set character encoding used inside vim
+set enc=utf-8
+" set file encoding
+set fenc=utf-8
+" set terminal encoding
+set termencoding=utf-8
+
+" automatically read in changes of a modified file
 set autoread
 
+" automatically indent when starting a new line
 set autoindent
+" smart indenting
 set smartindent
 
-set tabstop=2        " tab width is 2 spaces
+" tab width is 2 spaces
+set tabstop=2
+" tabs are expanded to 2 spaces
 set softtabstop=2
-set shiftwidth=2     " indent also with 2 spaces
-set expandtab        " expand tabs to spaces
+" indent also with 2 spaces
+set shiftwidth=2
+" expand tabs to spaces
+set expandtab
 
+" Trailing whitespace is red
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 augroup HLTrailWS
@@ -43,12 +58,21 @@ augroup HLTrailWS
   autocmd InsertEnter * if &modifiable  | match ExtraWhitespace /\s\+\%#\@<!$/ | endif
   autocmd InsertLeave * if &modifiable  | match ExtraWhitespace /\s\+$/ | endif
   autocmd BufWinLeave * if &modifiable  | call clearmatches() | endif
-  autocmd BufWritePre * :%s/\s\+$//e " delete trailing whitespace on save
+  " delete trailing whitespace on save
+  autocmd BufWritePre * :%s/\s\+$//e
 augroup END
 
+augroup Filetype_Make
+  autocmd!
+  autocmd FileType make set noexpandtab
+augroup END
+
+set textwidth=160
 set number
+" show at least 5 lines above or below
 set scrolloff=5
 if v:version >= 703
+  " enable relative line numbers
   augroup relNumbers
     autocmd!
     autocmd VimEnter,WinEnter,BufWinEnter * :setlocal relativenumber
@@ -56,21 +80,37 @@ if v:version >= 703
   augroup END
 endif
 
+" show matching brackets
 set showmatch
+" wildmenu settings
+" full - next full match
+" longest - complete until longest common string
 set wildmode=longest:full
+" list of file patterns to ignore
 set wildignore=*.o,*.obj,*.swp,\.git
+" enable wildmenu
 set wildmenu
 
+" wrap long lines according to breakat option
+" default breakat - ^I!@*-+;:,./?
 set wrap linebreak
 
+" affects <BS>
+" indent - allow backspacing autoindent
+" eol - allow backspacing line breaks
+" start - allow backspacing over the start of an insert
 set backspace=indent,eol,start
 
+" set leader key to space
 let mapleader=" "
 
+" directory for ~ files
 let &backupdir=expand($VIMFILES) . "/tmp//"
+" directory for .swp files
 let &directory=expand($VIMFILES) . "/tmp//"
 
 " netrw settings
+" 3 - tree style
 let g:netrw_liststyle = 3
 
 " stl == statusline
@@ -142,6 +182,7 @@ nnoremap <Leader>j <C-w>j
 nnoremap <Leader>k <C-w>k
 nnoremap <Leader>l <C-w>l
 
+" source local vimrc if it exists
 if filereadable(glob(expand($HOME) . '/.vimrc.local'))
   source $HOME/.vimrc.local
 endif

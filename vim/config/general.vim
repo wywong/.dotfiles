@@ -1,3 +1,4 @@
+" set nocompatible for when I run vim with -u
 set nocompatible
 
 " turn syntax highlighting on
@@ -13,24 +14,37 @@ if has('gui_running')
 else
   " Non-GUI (terminal) colors
   set t_Co=256
+  " Set colorscheme
   colorscheme wombat256
+  " Do not underline cursor line
   hi CursorLine term=NONE cterm=NONE
 endif
 
+" set character encoding used inside vim
 set enc=utf-8
+" set file encoding
 set fenc=utf-8
+" set terminal encoding
 set termencoding=utf-8
 
+" automatically read in changes of a modified file
 set autoread
 
+" automatically indent when starting a new line
 set autoindent
+" smart indenting
 set smartindent
 
-set tabstop=2        " tab width is 2 spaces
+" tab width is 2 spaces
+set tabstop=2
+" tabs are expanded to 2 spaces
 set softtabstop=2
-set shiftwidth=2     " indent also with 2 spaces
-set expandtab        " expand tabs to spaces
+" indent also with 2 spaces
+set shiftwidth=2
+" expand tabs to spaces
+set expandtab
 
+" Trailing whitespace is red
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 augroup HLTrailWS
@@ -39,7 +53,8 @@ augroup HLTrailWS
   autocmd InsertEnter * if &modifiable && &ft!='unite' | match ExtraWhitespace /\s\+\%#\@<!$/ | endif
   autocmd InsertLeave * if &modifiable && &ft!='unite' | match ExtraWhitespace /\s\+$/ | endif
   autocmd BufWinLeave * if &modifiable && &ft!='unite' | call clearmatches() | endif
-  autocmd BufWritePre * :%s/\s\+$//e " delete trailing whitespace on save
+  " delete trailing whitespace on save
+  autocmd BufWritePre * :%s/\s\+$//e
 augroup END
 
 augroup Filetype_Make
@@ -49,8 +64,10 @@ augroup END
 
 set textwidth=160
 set number
+" show at least 5 lines above or below
 set scrolloff=5
 if v:version >= 703
+  " enable relative line numbers
   augroup relNumbers
     autocmd!
     autocmd VimEnter,WinEnter,BufWinEnter * :setlocal relativenumber
@@ -58,15 +75,22 @@ if v:version >= 703
   augroup END
 endif
 
+" show matching brackets
 set showmatch
 " intelligent comments
 set comments=sl:/*,mb:\ *,elx:\ */
-" use intelligent file completion like in the bash
+" wildmenu settings
+" full - next full match
+" longest - complete until longest common string
 set wildmode=longest:full
+" list of file patterns to ignore
 set wildignore=*.o,*.obj,*.swp,\.git
+" enable wildmenu
 set wildmenu
 
+" highlight search matches
 set hlsearch
+" search as you type
 set incsearch
 
 augroup CursorLine
@@ -79,17 +103,26 @@ set foldmethod=indent   "fold based on indent
 set foldnestmax=10      "deepest fold is 10 levels
 set foldlevel=0
 
+" wrap long lines according to breakat option
+" default breakat - ^I!@*-+;:,./?
 set wrap linebreak
 augroup vimdiff_auto
   au!
   au FilterWritePre * if &diff | set wrap | endif
 augroup END
 
+" affects <BS>
+" indent - allow backspacing autoindent
+" eol - allow backspacing line breaks
+" start - allow backspacing over the start of an insert
 set backspace=indent,eol,start
 
+" set leader key to space
 let mapleader=" "
 
+" directory for ~ files
 let &backupdir=expand($VIMFILES) . "/tmp//"
+" directory for .swp files
 let &directory=expand($VIMFILES) . "/tmp//"
 
 " CursorHold triggered after 2s

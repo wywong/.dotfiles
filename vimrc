@@ -1,4 +1,5 @@
 if has('win32')
+  " use forward slashes
   set shellslash
   let $VIMFILES='$HOME/vimfiles'
 else
@@ -11,6 +12,7 @@ source $VIMFILES/config/templ.vim       " templates for code
 "source $VIMFILES/config/status.vim      " status line configuration
 source $VIMFILES/config/hotkeys.vim     " hotkeys
 
+" source local vimrc if it exists
 if filereadable(glob(expand($HOME) . '/.vimrc.local'))
   source $HOME/.vimrc.local
 endif

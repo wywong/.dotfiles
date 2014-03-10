@@ -21,7 +21,5 @@ nnoremap <Leader>j <C-w>j
 nnoremap <Leader>k <C-w>k
 nnoremap <Leader>l <C-w>l
 
-nnoremap <Leader>diff :diffthis<CR>
-nnoremap <Leader>up :diffupdate<CR>
-
+" sort visual selection
 vnoremap <Leader>s :sort<CR>
