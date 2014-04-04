@@ -16,7 +16,6 @@ NeoBundle 'Shougo/vimproc.vim', {
       \    },
       \ }
 NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/unite-outline'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'kien/rainbow_parentheses.vim'
 NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', {'autoload':{'filetypes':['tex']}}

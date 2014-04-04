@@ -34,4 +34,4 @@ nnoremap <leader>bv :<C-u>Unite -resume -quick-match -buffer-name=buffer buffer 
 
 nnoremap <leader>/ :<C-u>Unite grep:. -default-action=split<CR>
 
-nnoremap <leader>o :<C-u>Unite outline -winheight=20<CR>
+"nnoremap <leader>o :<C-u>Unite outline -winheight=20<CR>
