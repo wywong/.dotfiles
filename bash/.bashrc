@@ -25,6 +25,9 @@ alias mv='mv -i'
 alias ln='ln -i'
 alias cp='cp -i'
 
+# use xterm256-colors
+alias tmux='tmux -2'
+
 
 COLOR_CMDS=(ls grep)
 for cmd in ${COLOR_CMDS[@]}; do
@@ -83,6 +86,6 @@ pathadd $HOME/bin
 
 pathadd_tail './'
 
-if [ -f ~/.bash_local ]; then
-  . ~/.bash_local
+if [ -f ~/.bash.local ]; then
+  . ~/.bash.local
 fi
