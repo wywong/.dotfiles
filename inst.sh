@@ -10,4 +10,5 @@ ln -sf .dotfiles/vimrc_min .vimrc_min;
 ln -sf .dotfiles/bash/.bashrc .bashrc;
 ln -sf .dotfiles/bash/.bash_profile .bash_profile;
 ln -sf .dotfiles/git/.gitconfig .gitconfig;
+ln -sf .dotfiles/tmux.conf .tmux.conf;
 vim +NeoBundleInstall +qall;
