@@ -1,6 +1,6 @@
 # auto completion
-autoload -U compinit
-compinit
+zmodload zsh/complist
+autoload -U compinit && compinit
 
 # vi key bindings for shell input
 bindkey -v
@@ -61,7 +61,7 @@ local GIT_PROMPT='$(__git_prompt)'
 autoload -U colors && colors
 PROMPT="%{$fg[cyan]%}(%*) \
 %B${GIT_PROMPT}%b\
-%{$fg[green]%}%m@%M \
+%{$fg[green]%}%n@%M \
 %{$fg[yellow]%}\
 %B%~%b%{$reset_color%}${_newline}%# "
 
