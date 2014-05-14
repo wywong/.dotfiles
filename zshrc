@@ -11,12 +11,35 @@ export EDITOR=vim
 # reduce keytimeout to 0.1s
 export KEYTIMEOUT=1
 
+# ignore duplicates in history
+setopt HIST_IGNORE_DUPS
+
+# do not record commands beginning with space
+setopt HIST_IGNORE_SPACE
+
+# update history everytime zsh is called
+setopt SHARE_HISTORY
+
+# env vars for history
+export HISTSIZE=2000
+export HISTFILE="$HOME/.history"
+export SAVEHIST=$HISTSIZE
+
 # Cycle up and down history
 bindkey '^P' up-history
 bindkey '^N' down-history
 
 # Incremental search backward set to the same as bash
 bindkey '^r' history-incremental-search-backward
+
+# Make cd push the old directory onto the directory stack.
+setopt AUTO_PUSHD
+
+# Don’t push multiple copies of the same directory onto the directory stack.
+setopt PUSHD_IGNORE_DUPS
+
+# no clobber
+unsetopt CLOBBER
 
 # useful variables for prompt
 _newline=$'\n'
@@ -46,9 +69,6 @@ COLOR_CMDS=(ls grep)
 for cmd in ${COLOR_CMDS[@]}; do
   alias "$cmd=$cmd --color=auto"
 done
-
-# ignore duplicates in history
-setopt HIST_IGNORE_DUPS
 
 # source minimal vimrc
 alias vi='vim -u "~/.vimrc_min"'
