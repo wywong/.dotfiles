@@ -1,3 +1,10 @@
+# If not running interactively, don't do anything
+[[ "$-" != *i* ]] && return
+
+if [ -f ~/.zsh.before ]; then
+  . ~/.zsh.before
+fi
+
 # auto completion
 zmodload zsh/complist
 autoload -U compinit && compinit

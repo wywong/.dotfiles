@@ -5,6 +5,10 @@
 # If not running interactively, don't do anything
 [[ "$-" != *i* ]] && return
 
+if [ -f ~/.bash.before ]; then
+  . ~/.bash.before
+fi
+
 export PS1="\n\e[32;40m\u@\H \e[33;40m\w\e[0m\n$ "
 
 export EDITOR=vim
