@@ -35,12 +35,12 @@ set autoindent
 " smart indenting
 set smartindent
 
-" tab width is 2 spaces
-set tabstop=2
-" tabs are expanded to 2 spaces
-set softtabstop=2
-" indent also with 2 spaces
-set shiftwidth=2
+" tab width is 4 spaces
+set tabstop=4
+" tabs are expanded to 4 spaces
+set softtabstop=4
+" indent also with 4 spaces
+set shiftwidth=4
 " expand tabs to spaces
 set expandtab
 
