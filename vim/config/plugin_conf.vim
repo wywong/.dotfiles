@@ -20,7 +20,9 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'kien/rainbow_parentheses.vim'
 NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', {'autoload':{'filetypes':['tex']}}
 NeoBundle 'mhinz/vim-signify'
+NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-sleuth'
 NeoBundle 'tpope/vim-surround'
 
 NeoBundleLazy 'vim-ruby/vim-ruby', {'autoload':{'filetypes':['ruby']}}
