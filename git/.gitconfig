@@ -1,12 +1,19 @@
 [core]
   editor = vim -u "~/.vimrc_min" # use minimal vimrc
+  autocrlf = input
 [user]
   name = Wilson Y. Wong
   email = Wilson.Young.Wong@gmail.com
 [alias]
-  co = checkout
   br = branch
+  co = checkout
+  lg = log --graph --decorate
+  unstage = reset HEAD
 [merge]
   tool = vimdiff
 [color]
   ui = true
+[push]
+  default = upstream
+[include]
+  path = ~/.gitconfig.local
