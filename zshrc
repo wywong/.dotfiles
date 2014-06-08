@@ -1,6 +1,10 @@
 # If not running interactively, don't do anything
 [[ "$-" != *i* ]] && return
 
+if [ -f ~/.zsh.first ]; then
+  . ~/.zsh.first
+fi
+
 [[ -z "$TMUX" ]] && exec tmux -2
 
 if [ -f ~/.zsh.before ]; then
