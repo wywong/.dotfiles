@@ -17,6 +17,7 @@ NeoBundle 'Shougo/vimproc.vim', {
       \ }
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'kien/rainbow_parentheses.vim'
 NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', {'autoload':{'filetypes':['tex']}}
 NeoBundle 'mhinz/vim-signify'
@@ -62,3 +63,6 @@ augroup END
 
 " Unite
 source $VIMFILES/config/unite_config.vim
+
+" Slime
+source $VIMFILES/config/slime_config.vim
