@@ -8,13 +8,13 @@ EXECUTABLE =
 all: $(SOURCES) $(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJECTS)
-		$(CC) $(LDFLAGS) $(OBJECTS) -o $@
+	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
 
 clean:
-		rm -f *.o $(EXECUTABLE)
+	rm -f *.o $(EXECUTABLE)
 
 run:
-		./$(EXECUTABLE)
+	./$(EXECUTABLE)
 
 .c.o:
-		$(CC) $(CFLAGS) $< -o $@
+	$(CC) $(CFLAGS) $< -o $@

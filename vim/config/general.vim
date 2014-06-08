@@ -62,7 +62,7 @@ augroup Filetype_Make
   autocmd FileType make set noexpandtab
 augroup END
 
-set textwidth=160
+set textwidth=80
 set number
 " show at least 5 lines above or below
 set scrolloff=5
