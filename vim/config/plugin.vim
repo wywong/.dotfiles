@@ -19,9 +19,9 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'kien/rainbow_parentheses.vim'
+NeoBundleLazy 'klen/python-mode', {'autoload':{'filetypes':['python']}}
 NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', {'autoload':{'filetypes':['tex']}}
 NeoBundle 'mhinz/vim-signify'
-NeoBundle 'sheerun/vim-polyglot'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-sleuth'

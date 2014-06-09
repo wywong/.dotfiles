@@ -33,7 +33,6 @@ function! SchemeChange(schemeName)
   call TrailingWS()
   call lightline#init()
   call lightline#update()
-"  source $VIMFILES/config/plug/rainbow.vim
 endfunction
 
 " turn syntax highlighting on
@@ -42,5 +41,6 @@ syntax enable
 augroup FileColourScheme
   autocmd!
   autocmd BufEnter * call SchemeChange('hybrid')
+  autocmd BufEnter *.py call SchemeChange('wombat256')
   autocmd BufEnter *.sh call SchemeChange('wombat256')
 augroup END
