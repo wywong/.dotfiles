@@ -33,6 +33,7 @@ function! SchemeChange(schemeName)
   call TrailingWS()
   call lightline#init()
   call lightline#update()
+"  source $VIMFILES/config/plug/rainbow.vim
 endfunction
 
 " turn syntax highlighting on

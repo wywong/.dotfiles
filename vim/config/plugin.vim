@@ -31,38 +31,28 @@ NeoBundle 'w0ng/vim-hybrid'
 filetype plugin indent on
 
 " netrw
-let g:netrw_liststyle = 3
+source $VIMFILES/config/plug/netrw.vim
 
 " Signify
-source $VIMFILES/config/sy_config.vim
+source $VIMFILES/config/plug/signify.vim
 
 " LightLine
 set noruler
 set laststatus=2
 set lazyredraw
-source $VIMFILES/config/lline_config.vim
+source $VIMFILES/config/plug/lightline.vim
 
 " Latex-Box
-let g:LatexBox_output_type = 'pdf'
+source $VIMFILES/config/plug/latexbox.vim
 
 " Rainbow Parentheses
-nnoremap <leader>rp :RainbowParenthesesToggle<CR>
-augroup rainbow_parens_auto
-  au!
-  au VimEnter * RainbowParenthesesToggle
-  au Syntax * RainbowParenthesesLoadRound
-  au Syntax * RainbowParenthesesLoadSquare
-  au Syntax * RainbowParenthesesLoadBraces
-augroup END
+source $VIMFILES/config/plug/rainbow.vim
 
 " Fugitive
-augroup Fugitive_auto
-  autocmd!
-  autocmd BufReadPost fugitive://* set bufhidden=delete
-augroup END
+source $VIMFILES/config/plug/fugitive.vim
 
 " Unite
-source $VIMFILES/config/unite_config.vim
+source $VIMFILES/config/plug/unite.vim
 
 " Slime
-source $VIMFILES/config/slime_config.vim
+source $VIMFILES/config/plug/slime.vim
