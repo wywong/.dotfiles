@@ -1,5 +1,5 @@
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'Tomorrow_Night_Eighties',
       \ 'component': {
       \   'lineinfo': '%3l/%L:%-2v',
       \   'truncate': '%<',

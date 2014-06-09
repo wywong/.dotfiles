@@ -1,25 +1,6 @@
 " set nocompatible for when I run vim with -u
 set nocompatible
 
-" turn syntax highlighting on
-syntax enable
-if has('gui_running')
-  " GUI colors
-  colorscheme wombat
-  if has("gui_gtk2")
-    set guifont=Inconsolata\ 11
-  elseif has("gui_win32")
-    set guifont=Consolas:h10:cANSI
-  endif
-else
-  " Non-GUI (terminal) colors
-  set t_Co=256
-  " Set colorscheme
-  colorscheme wombat256
-  " Do not underline cursor line
-  hi CursorLine term=NONE cterm=NONE
-endif
-
 " set character encoding used inside vim
 set enc=utf-8
 " set file encoding
@@ -43,19 +24,6 @@ set softtabstop=4
 set shiftwidth=4
 " expand tabs to spaces
 set expandtab
-
-" Trailing whitespace is red
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-augroup HLTrailWS
-  autocmd!
-  autocmd BufWinEnter * if &modifiable && &ft!='unite' | match ExtraWhitespace /\s\+$/ | endif
-  autocmd InsertEnter * if &modifiable && &ft!='unite' | match ExtraWhitespace /\s\+\%#\@<!$/ | endif
-  autocmd InsertLeave * if &modifiable && &ft!='unite' | match ExtraWhitespace /\s\+$/ | endif
-  autocmd BufWinLeave * if &modifiable && &ft!='unite' | call clearmatches() | endif
-  " delete trailing whitespace on save
-  autocmd BufWritePre * :%s/\s\+$//e
-augroup END
 
 augroup Filetype_Make
   autocmd!

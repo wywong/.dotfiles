@@ -26,6 +26,7 @@ NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-sleuth'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'w0ng/vim-hybrid'
 
 filetype plugin indent on
 
