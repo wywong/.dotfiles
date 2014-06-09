@@ -30,29 +30,8 @@ NeoBundle 'w0ng/vim-hybrid'
 
 filetype plugin indent on
 
-" netrw
-source $VIMFILES/config/plug/netrw.vim
-
-" Signify
-source $VIMFILES/config/plug/signify.vim
-
-" LightLine
-set noruler
-set laststatus=2
-set lazyredraw
-source $VIMFILES/config/plug/lightline.vim
-
-" Latex-Box
-source $VIMFILES/config/plug/latexbox.vim
-
-" Rainbow Parentheses
-source $VIMFILES/config/plug/rainbow.vim
-
-" Fugitive
-source $VIMFILES/config/plug/fugitive.vim
-
-" Unite
-source $VIMFILES/config/plug/unite.vim
-
-" Slime
-source $VIMFILES/config/plug/slime.vim
+" Source all plugin config files
+let s:plugin_configs = split(globpath(expand($VIMFILES) . '/config/plug', '*'), '\n')
+for plugin_ii in s:plugin_configs
+  silent! exe 'source ' . plugin_ii
+endfor

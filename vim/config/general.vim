@@ -25,6 +25,15 @@ set shiftwidth=4
 " expand tabs to spaces
 set expandtab
 
+" set no ruler
+set noruler
+
+" always display status line
+set laststatus=2
+
+" lazyredraw to speed things up
+set lazyredraw
+
 augroup Filetype_Make
   autocmd!
   autocmd FileType make set noexpandtab
