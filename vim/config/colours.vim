@@ -1,3 +1,11 @@
+let g:clear_trailing_ws = 1
+
+function! ClearTWS()
+  if g:clear_trailing_ws
+    exe '%s/\s\+$//e'
+  endif
+endfunction
+
 function! TrailingWS()
   " Trailing whitespace is red
   highlight ExtraWhitespace ctermbg=red guibg=red
@@ -9,7 +17,7 @@ function! TrailingWS()
     autocmd InsertLeave * if &modifiable && &ft!='unite' | match ExtraWhitespace /\s\+$/ | endif
     autocmd BufWinLeave * if &modifiable && &ft!='unite' | call clearmatches() | endif
     " delete trailing whitespace on save
-    autocmd BufWritePre * :%s/\s\+$//e
+    autocmd BufWritePre * call ClearTWS()
   augroup END
 endfunction
 

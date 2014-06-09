@@ -7,13 +7,12 @@
 [alias]
   br = branch
   co = checkout
+  st = status
   lg = log --graph --decorate
   unstage = reset HEAD
 [merge]
   tool = vimdiff
 [color]
   ui = true
-[push]
-  default = upstream
 [include]
   path = ~/.gitconfig.local
