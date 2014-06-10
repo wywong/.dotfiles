@@ -5,7 +5,10 @@ if [ -f ~/.zsh.first ]; then
   . ~/.zsh.first
 fi
 
-[[ -z "$TMUX" ]] && exec tmux -2
+# check to see if login via ssh
+if [ -z "$SSH_CONNECTION" ]; then
+  [[ -z "$TMUX" ]] && exec tmux -2
+fi
 
 if [ -f ~/.zsh.before ]; then
   . ~/.zsh.before
@@ -135,16 +138,19 @@ function start_agent {
   /usr/bin/ssh-add;
 }
 
-# If user is not root
-if [[ $UID != 0 ]]; then
-  # Source SSH settings, if applicable
-  if [ -f "${SSH_ENV}" ]; then
-      . "${SSH_ENV}" > /dev/null
-      ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+# check to see if login via ssh
+if [ -z "$SSH_CONNECTION" ]; then
+  # If user is not root
+  if [[ $UID != 0 ]]; then
+    # Source SSH settings, if applicable
+    if [ -f "${SSH_ENV}" ]; then
+        . "${SSH_ENV}" > /dev/null
+        ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+          start_agent;
+        }
+    else
       start_agent;
-    }
-  else
-    start_agent;
+    fi
   fi
 fi
 
