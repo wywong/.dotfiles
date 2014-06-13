@@ -47,8 +47,6 @@ alias info='info --vi-keys'
 alias df='df -h'
 alias du='du -h'
 
-echo Current Time: `date`
-
 SSH_ENV="$HOME/.ssh/environment"
 
 function start_agent {

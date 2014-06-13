@@ -49,6 +49,5 @@ syntax enable
 augroup FileColourScheme
   autocmd!
   autocmd BufEnter * call SchemeChange('hybrid')
-  autocmd BufEnter *.py call SchemeChange('wombat256')
-  autocmd BufEnter *.sh call SchemeChange('wombat256')
+  autocmd BufEnter *.py,*.sh call SchemeChange('wombat256')
 augroup END
