@@ -1,6 +1,14 @@
+function TabToggle()
+  if &expandtab
+    set noexpandtab
+  else
+    set expandtab
+  endif
+endfunction
+
 " Enhanced keyboard mappings
 " toggle expandtab
-nnoremap <F3> :set noexpandtab!<CR>
+nnoremap <F3> :call TabToggle()<CR>
 " build using makeprg with <F7>
 nnoremap <F5> :make<CR>
 " build using makeprg with <F7>, in insert mode exit to command mode, save and compile
@@ -22,4 +30,4 @@ nnoremap <Leader>k <C-w>k
 nnoremap <Leader>l <C-w>l
 
 " sort visual selection
-vnoremap <Leader>s :sort<CR>
+vnoremap <Leader>s :sort<CR>gv
