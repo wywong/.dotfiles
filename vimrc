@@ -7,6 +7,7 @@ else
 endif
 
 source $VIMFILES/config/general.vim     " configuration and colors
+source $VIMFILES/config/utils.vim     " configuration and colors
 source $VIMFILES/config/plugin.vim " plugin configuration
 source $VIMFILES/config/templ.vim       " templates for code
 source $VIMFILES/config/hotkeys.vim     " hotkeys

@@ -1,19 +1,3 @@
-function! TabToggle()
-  if &expandtab
-    set noexpandtab
-  else
-    set expandtab
-  endif
-endfunction
-
-function! CaseToggle()
-  if &ignorecase
-    set noignorecase
-  else
-    set ignorecase
-  endif
-endfunction
-
 " Enhanced keyboard mappings
 " toggle expandtab
 nnoremap <F3> :call TabToggle()<CR>
