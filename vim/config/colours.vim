@@ -1,8 +1,12 @@
 let g:clear_trailing_ws = 1
 
+function! CTWS()
+  silent! exe '%s/\s\+$//e'
+endfunction
+
 function! ClearTWS()
   if g:clear_trailing_ws
-    exe '%s/\s\+$//e'
+    call CTWS()
   endif
 endfunction
 

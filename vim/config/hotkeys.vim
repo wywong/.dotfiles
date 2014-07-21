@@ -1,4 +1,4 @@
-function TabToggle()
+function! TabToggle()
   if &expandtab
     set noexpandtab
   else
