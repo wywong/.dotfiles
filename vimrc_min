@@ -40,6 +40,9 @@ set autoindent
 " smart indenting
 set smartindent
 
+" ignore case when searching
+set ignorecase
+
 " tab width is 4 spaces
 set tabstop=4
 " tabs are expanded to 4 spaces
@@ -158,16 +161,6 @@ set stl+=%{&ff}] "file format
 " column and lines numbers
 set stl+=[%l/%L,
 set stl+=%c]
-
-" Enhanced keyboard mappings
-" toggle expandtab
-nnoremap <F3> :set noexpandtab!<CR>
-" build using makeprg with <F7>
-nnoremap <F5> :make<CR>
-" build using makeprg with <F7>, in insert mode exit to command mode, save and compile
-inoremap <F5> <ESC>:w<CR>:make<CR>
-" build using makeprg with <S-F7>
-nnoremap <S-F5> :make clean all<CR>
 
 " disable ex mode
 noremap Q <nop>

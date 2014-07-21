@@ -6,15 +6,27 @@ function! TabToggle()
   endif
 endfunction
 
+function! CaseToggle()
+  if &ignorecase
+    set noignorecase
+  else
+    set ignorecase
+  endif
+endfunction
+
 " Enhanced keyboard mappings
 " toggle expandtab
 nnoremap <F3> :call TabToggle()<CR>
+" toggle ignorecase
+nnoremap <F4> :call CaseToggle()<CR>
 " build using makeprg with <F7>
 nnoremap <F5> :make<CR>
 " build using makeprg with <F7>, in insert mode exit to command mode, save and compile
 inoremap <F5> <ESC>:w<CR>:make<CR>
 " build using makeprg with <S-F7>
 nnoremap <S-F5> :make clean all<CR>
+" clear trailing whitespace
+nnoremap <F8> :call CTWS()<CR>
 
 " disable ex mode
 noremap Q <nop>

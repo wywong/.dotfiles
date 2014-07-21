@@ -16,6 +16,9 @@ set autoindent
 " smart indenting
 set smartindent
 
+" ignore case when searching
+set ignorecase
+
 " tab width is 4 spaces
 set tabstop=4
 " tabs are expanded to 4 spaces
