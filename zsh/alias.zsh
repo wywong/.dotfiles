@@ -10,10 +10,15 @@ bindkey -v
 # Incremental search backward set to the same as bash
 bindkey '^r' history-incremental-search-backward
 bindkey -M vicmd '^r' history-incremental-search-backward
+bindkey '^s' history-incremental-search-forward
+bindkey -M vicmd '^s' history-incremental-search-forward
 
 # Cycle up and down history like bash
 bindkey '^P' up-history
 bindkey '^N' down-history
+
+# Do not wildcard the scp command
+alias scp='noglob scp'
 
 # source minimal vimrc
 alias vi='vim -u "~/.vimrc_min"'
