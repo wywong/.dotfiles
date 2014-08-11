@@ -5,10 +5,8 @@ if [ -f ~/.zsh.first ]; then
   . ~/.zsh.first
 fi
 
-# check to see if login via ssh
-if [ -z "$SSH_CONNECTION" ]; then
-  [[ -z "$TMUX" ]] && exec tmux -2
-fi
+# disable flow control
+stty -ixon
 
 if [ -f ~/.zsh.before ]; then
   . ~/.zsh.before
