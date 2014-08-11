@@ -5,7 +5,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Layout.NoBorders
 import XMonad.Util.Run(spawnPipe)
-import XMonad.Util.EZConfig(additionalKeys)
+import XMonad.Util.EZConfig(additionalKeysP)
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
@@ -262,4 +262,9 @@ defaults = defaultConfig {
     layoutHook         = smartBorders $ myLayout,
     manageHook         = myManageHook,
     startupHook        = myStartupHook
-}
+} `additionalKeysP`
+  [ ("<XF86AudioLowerVolume>", spawn "amixer -q set Master 2%-")
+  , ("<XF86AudioMute>", spawn "amixer -q set Master toggle")
+  , ("<XF86AudioRaiseVolume>", spawn "amixer -q set Master 2%+")
+  ]
+
