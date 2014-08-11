@@ -2,4 +2,4 @@ vim/.netrwhist
 vim/bundle/*
 zsh/cache
 xmonad/*
-!xmonad/xmonad.hs
+!xmonad/*.hs
