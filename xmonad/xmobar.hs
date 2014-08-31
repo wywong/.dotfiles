@@ -11,7 +11,7 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
                                     "-L", "10", "-H", "80", "-p", "3",
                                     "--", "-O", "<fc=#00ff00>Charging</fc>:",
                                     "-i", "",
-                                    "-o", "",
+                                    "-o", "Batt",
                                     "-f", "ACAD/online",
                                     "-L", "-15", "-H", "-5",
                                     "-l", "red", "-m", "blue", "-h", "green"]
@@ -21,5 +21,5 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
        , sepChar = "%"
        , alignSep = "}{"
        -- , template = "%cpu% | %memory% }{ %battery% | <fc=#ee9a00>%date%</fc>"
-       , template = "%StdinReader% }{ %cpu% %memory% Batt:%battery% | <fc=#ee9a00>%date%</fc>"
+       , template = "%StdinReader% }{ %cpu% %memory% %battery% | <fc=#ee9a00>%date%</fc>"
        }
