@@ -42,6 +42,8 @@ myWorkspaces = ["1:term","2:web","3:media"] ++ map show [4..9]
 myManageHook = composeAll
     [ className =? "Chromium" --> doShift "2:web"
     , className =? "Skype" --> doShift "3:media"
+    , className =? "mpv" --> doShift "3:media"
+    , className =? "evince" --> doShift "3:media"
     ]
 
 
