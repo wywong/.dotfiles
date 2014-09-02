@@ -266,6 +266,8 @@ defaults = defaultConfig {
   [ ("<XF86AudioLowerVolume>", spawn "amixer -q set Master 2%-")
   , ("<XF86AudioMute>", spawn "amixer -q set Master toggle")
   , ("<XF86AudioRaiseVolume>", spawn "amixer -q set Master 2%+")
+  , ("<XF86MonBrightnessDown>", spawn "xbacklight -1")
+  , ("<XF86MonBrightnessUp>", spawn "xbacklight +1")
   , ("<Print>", spawn "scrot -e 'mv $f ~/screenshots'")
   ]
 

@@ -5,6 +5,8 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
        , lowerOnStart = True
        , commands = [ Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
                     , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
+                    , Run Com "/home/wywong/.scripts/wireless.sh" [] "wifi" 30
+                    , Run Com "/home/wywong/.scripts/volume.sh" [] "volume" 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
                     , Run BatteryP ["BAT1"]
                                    ["-t", "<acstatus> <left>%",
@@ -20,6 +22,5 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       -- , template = "%cpu% | %memory% }{ %battery% | <fc=#ee9a00>%date%</fc>"
-       , template = "%StdinReader% }{ %cpu% %memory% %battery% | <fc=#ee9a00>%date%</fc>"
+       , template = "%StdinReader% }{ %cpu% %memory% | %volume%| %battery% | %wifi% | <fc=#ee9a00>%date%</fc>"
        }
