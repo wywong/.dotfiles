@@ -1,6 +1,7 @@
 import System.IO
 import System.Exit
 import XMonad
+import XMonad.Actions.UpdatePointer
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Layout.NoBorders
@@ -230,11 +231,11 @@ myStartupHook = return ()
 main = do
   xmproc <- spawnPipe "xmobar ~/.xmobarrc"
   xmonad $ defaults {
-      logHook = dynamicLogWithPP $ xmobarPP {
+      logHook = ( dynamicLogWithPP $ xmobarPP {
             ppOutput = hPutStrLn xmproc
           , ppTitle = xmobarColor xmobarTitleColor "" . shorten 100
           , ppCurrent = xmobarColor xmobarCurrentWorkspaceColor ""
-      }
+      } ) >> updatePointer ( Relative 0.99 0.99 )
       , manageHook = manageDocks <+> myManageHook
   }
 
