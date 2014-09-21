@@ -11,7 +11,7 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
                     , Run BatteryP ["BAT1"]
                                    ["-t", "<acstatus> <left>%",
                                     "-L", "10", "-H", "80", "-p", "3",
-                                    "--", "-O", "<fc=#00ff00>Charging</fc>:",
+                                    "--", "-O", "<fc=#00ff00>AC</fc>:",
                                     "-i", "",
                                     "-o", "Batt",
                                     "-f", "ACAD/online",

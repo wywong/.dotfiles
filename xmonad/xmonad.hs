@@ -66,7 +66,7 @@ myLayout = avoidStruts (
 
 ------------------------------------------------------------------------
 -- Colors and borders
-myNormalBorderColor  = "#dadada"
+myNormalBorderColor  = "#080808"
 myFocusedBorderColor = "#00ffd7"
 
 -- Color of current window title in xmobar.
