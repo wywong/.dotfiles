@@ -23,9 +23,12 @@ NeoBundleLazy 'klen/python-mode', {'autoload':{'filetypes':['python']}}
 NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', {'autoload':{'filetypes':['tex']}}
 NeoBundle 'mhinz/vim-signify'
 NeoBundle 'tpope/vim-commentary'
+NeoBundle 'tpope/vim-endwise', {'autoload':{'filetypes':['eruby', 'ruby', 'erb']}}
 NeoBundle 'tpope/vim-fugitive'
+NeoBundleLazy 'tpope/vim-rails', {'autoload':{'filetypes':['eruby', 'ruby', 'erb']}}
 NeoBundle 'tpope/vim-sleuth'
 NeoBundle 'tpope/vim-surround'
+NeoBundleLazy 'vim-ruby/vim-ruby', {'autoload':{'filetypes':['eruby', 'ruby', 'erb']}}
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'wellle/tmux-complete.vim'
 
