@@ -3,7 +3,7 @@ if has('vim_starting')
   set runtimepath+=$VIMFILES/bundle/neobundle.vim/
 endif
 
-call neobundle#rc((expand($VIMFILES) . "/bundle/"))
+call neobundle#begin((expand($VIMFILES) . "/bundle/"))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
@@ -28,6 +28,13 @@ NeoBundle 'tpope/vim-sleuth'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'wellle/tmux-complete.vim'
+
+" source local neobundle if it exists
+if filereadable(glob(expand($HOME) . '/.neobundle.local'))
+  source $HOME/.neobundle.local
+endif
+
+call neobundle#end()
 
 filetype plugin indent on
 
