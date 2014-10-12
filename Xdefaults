@@ -38,6 +38,17 @@ xterm*scrollBar: false
 xterm*cursorBlink: true
 xterm*cursorUnderline: false
 
+xterm*dynamicColors: true
+xterm*faceName: xft:monospace:size=9
+xterm*faceNameDoublesize:   xft:Droid Sans Fallback:style=Regular
+
+! xft
+Xft.dpi: 96
+Xft.antialias: true
+Xft.rgba: rgb
+Xft.hinting: true
+Xft.hintstyle: hintslight
+
 !xterm key
 xterm*VT100.Translations: #override \
                     <Key>BackSpace: string(0x7F)
