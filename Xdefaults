@@ -39,7 +39,7 @@ xterm*cursorBlink: true
 xterm*cursorUnderline: false
 
 xterm*dynamicColors: true
-xterm*faceName: xft:monospace:size=9
+xterm*faceName: xft:monospace:size=8
 xterm*faceNameDoublesize:   xft:Droid Sans Fallback:style=Regular
 
 ! xft
