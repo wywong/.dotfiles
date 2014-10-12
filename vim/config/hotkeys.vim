@@ -15,6 +15,9 @@ nnoremap <F8> :call CTWS()<CR>
 " disable ex mode
 noremap Q <nop>
 
+" disable man lookup
+noremap K <nop>
+
 " Reselect visual block after indent/outdent
 vnoremap < <gv
 vnoremap > >gv
