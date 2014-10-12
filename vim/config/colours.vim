@@ -1,4 +1,5 @@
 let g:clear_trailing_ws = 1
+let g:seoul256_background = 234
 
 function! SchemeChange(schemeName)
   if has('gui_running')
@@ -13,7 +14,11 @@ function! SchemeChange(schemeName)
     " Non-GUI (terminal) colors
     set t_Co=256
     " Set colorscheme
-    exe 'colorscheme ' . a:schemeName
+    try
+      exe 'colorscheme ' . a:schemeName
+    catch
+      exe 'colorscheme wombat256'
+    endtry
     " Do not underline cursor line
     hi CursorLine term=NONE cterm=NONE
   endif
@@ -27,6 +32,5 @@ syntax enable
 
 augroup FileColourScheme
   autocmd!
-  autocmd BufEnter * call SchemeChange('hybrid')
-  autocmd BufEnter *.py,*.sh call SchemeChange('wombat256')
+  autocmd BufEnter * call SchemeChange('seoul256')
 augroup END

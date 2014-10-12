@@ -18,6 +18,7 @@ NeoBundle 'Shougo/vimproc.vim', {
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'jpalardy/vim-slime'
+NeoBundle 'junegunn/seoul256.vim'
 NeoBundle 'kien/rainbow_parentheses.vim'
 NeoBundleLazy 'klen/python-mode', {'autoload':{'filetypes':['python']}}
 NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', {'autoload':{'filetypes':['tex']}}
@@ -29,7 +30,6 @@ NeoBundleLazy 'tpope/vim-rails', {'autoload':{'filetypes':['eruby', 'ruby', 'erb
 NeoBundle 'tpope/vim-sleuth'
 NeoBundle 'tpope/vim-surround'
 NeoBundleLazy 'vim-ruby/vim-ruby', {'autoload':{'filetypes':['eruby', 'ruby', 'erb']}}
-NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'wellle/tmux-complete.vim'
 
 " source local neobundle if it exists
