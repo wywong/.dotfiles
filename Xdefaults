@@ -53,3 +53,4 @@ Xft.hintstyle: hintslight
 xterm*VT100.Translations: #override \
                     <Key>BackSpace: string(0x7F)
 xterm*ttyModes: erase ^?
+xterm*metaSendsEscape: true

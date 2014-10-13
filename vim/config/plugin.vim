@@ -18,6 +18,7 @@ NeoBundle 'Shougo/vimproc.vim', {
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'jpalardy/vim-slime'
+NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'junegunn/seoul256.vim'
 NeoBundle 'kien/rainbow_parentheses.vim'
 NeoBundleLazy 'klen/python-mode', {'autoload':{'filetypes':['python']}}
