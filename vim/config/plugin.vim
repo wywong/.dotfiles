@@ -25,6 +25,7 @@ NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-sleuth'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'tsukkee/unite-tag'
 
 " Lazy load plugins
 NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', {'autoload':{'filetypes':['tex']}}
