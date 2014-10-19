@@ -10,28 +10,31 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/vimproc.vim', {
       \ 'build' : {
       \     'windows' : 'make -f make_mingw32.mak',
-      \     'cygwin' : 'make -f make_cygwin.mak',
-      \     'mac' : 'make -f make_mac.mak',
-      \     'unix' : 'make -f make_unix.mak',
+      \     'cygwin'  : 'make -f make_cygwin.mak',
+      \     'mac'     : 'make -f make_mac.mak',
+      \     'unix'    : 'make -f make_unix.mak',
       \    },
       \ }
-NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/unite.vim', { 'depends' : [ 'Shougo/vimproc.vim' ] }
 NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'junegunn/seoul256.vim'
 NeoBundle 'kien/rainbow_parentheses.vim'
-NeoBundleLazy 'klen/python-mode', {'autoload':{'filetypes':['python']}}
-NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', {'autoload':{'filetypes':['tex']}}
 NeoBundle 'mhinz/vim-signify'
 NeoBundle 'tpope/vim-commentary'
-NeoBundle 'tpope/vim-endwise', {'autoload':{'filetypes':['eruby', 'ruby', 'erb']}}
 NeoBundle 'tpope/vim-fugitive'
-NeoBundleLazy 'tpope/vim-rails', {'autoload':{'filetypes':['eruby', 'ruby', 'erb']}}
 NeoBundle 'tpope/vim-sleuth'
 NeoBundle 'tpope/vim-surround'
+
+" Lazy load plugins
+NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', {'autoload':{'filetypes':['tex']}}
+NeoBundleLazy 'kergoth/aftersyntaxc.vim', {'autoload':{'filetypes':['c', 'cpp', 'h', 'hpp']}}
+NeoBundleLazy 'klen/python-mode', {'autoload':{'filetypes':['python']}}
+NeoBundleLazy 'octol/vim-cpp-enhanced-highlight', {'autoload':{'filetypes':['c', 'cpp', 'h', 'hpp']}}
+NeoBundleLazy 'tpope/vim-endwise', {'autoload':{'filetypes':['eruby', 'ruby', 'erb']}}
+NeoBundleLazy 'tpope/vim-rails', {'autoload':{'filetypes':['eruby', 'ruby', 'erb']}}
+NeoBundleLazy 'vim-jp/cpp-vim', {'autoload':{'filetypes':['c', 'cpp', 'h', 'hpp']}}
 NeoBundleLazy 'vim-ruby/vim-ruby', {'autoload':{'filetypes':['eruby', 'ruby', 'erb']}}
-NeoBundle 'wellle/tmux-complete.vim'
 
 " source local neobundle if it exists
 if filereadable(glob(expand($HOME) . '/.neobundle.local'))
