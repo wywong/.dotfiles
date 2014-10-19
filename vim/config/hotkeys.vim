@@ -18,6 +18,9 @@ noremap Q <nop>
 " disable man lookup
 noremap K <nop>
 
+" a sane Y key
+nnoremap Y y$
+
 " Reselect visual block after indent/outdent
 vnoremap < <gv
 vnoremap > >gv

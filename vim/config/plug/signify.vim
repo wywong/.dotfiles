@@ -9,5 +9,6 @@ let g:signify_sign_change            = '~'
 let g:signify_sign_delete            = '_'
 let g:signify_sign_delete_first_line = '‾'
 
-let g:signify_cursorhold_normal = 1
+" do not autosave on cursorhold event
+let g:signify_cursorhold_normal = 0
 let g:signify_cursorhold_insert = 0

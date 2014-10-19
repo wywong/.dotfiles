@@ -1,5 +1,5 @@
 [core]
-  editor = vim -u "~/.vimrc_min" # use minimal vimrc
+  editor = vim -u "~/.vimrc"
 [user]
   name = Wilson Y. Wong
   email = Wilson.Young.Wong@gmail.com
@@ -15,3 +15,5 @@
   ui = true
 [include]
   path = ~/.gitconfig.local
+[init]
+  templatedir = ~/.git_templates

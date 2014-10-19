@@ -32,6 +32,7 @@ NeoBundleLazy 'kergoth/aftersyntaxc.vim', {'autoload':{'filetypes':['c', 'cpp', 
 NeoBundleLazy 'klen/python-mode', {'autoload':{'filetypes':['python']}}
 NeoBundleLazy 'octol/vim-cpp-enhanced-highlight', {'autoload':{'filetypes':['c', 'cpp', 'h', 'hpp']}}
 NeoBundleLazy 'tpope/vim-endwise', {'autoload':{'filetypes':['eruby', 'ruby', 'erb']}}
+NeoBundleLazy 'tpope/vim-git', {'autoload':{'filetypes':['gitcommit']}}
 NeoBundleLazy 'tpope/vim-rails', {'autoload':{'filetypes':['eruby', 'ruby', 'erb']}}
 NeoBundleLazy 'vim-jp/cpp-vim', {'autoload':{'filetypes':['c', 'cpp', 'h', 'hpp']}}
 NeoBundleLazy 'vim-ruby/vim-ruby', {'autoload':{'filetypes':['eruby', 'ruby', 'erb']}}
