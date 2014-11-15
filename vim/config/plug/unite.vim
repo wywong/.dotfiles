@@ -24,6 +24,8 @@ else
   nnoremap <leader>fv :<C-u>Unite -resume -start-insert -buffer-name=files file_rec/async -default-action=vsplit<CR>
 endif
 
+nnoremap <leader>fg :<C-u>Unite -resume -no-split -start-insert -buffer-name=files file_rec/git<CR>
+
 nnoremap <leader>bc :<C-u>Unite -resume -quick-match -no-split -buffer-name=buffer buffer<CR>
 nnoremap <leader>bs :<C-u>Unite -resume -quick-match -buffer-name=buffer buffer -default-action=split<CR>
 nnoremap <leader>bv :<C-u>Unite -resume -quick-match -buffer-name=buffer buffer -default-action=vsplit<CR>
@@ -32,6 +34,7 @@ nnoremap <leader>bv :<C-u>Unite -resume -quick-match -buffer-name=buffer buffer 
 "nnoremap <leader>ms :<C-u>Unite -resume -buffer-name=recent file_mru -default-action=split<CR>
 "nnoremap <leader>mv :<C-u>Unite -resume -buffer-name=recent file_mru -default-action=vsplit<CR>
 
-nnoremap <leader>/ :<C-u>Unite grep:. -default-action=split<CR>
+nnoremap <leader>/ :<C-u>Unite grep:.<CR>
+nnoremap <leader>gb :<C-u>Unite grep:$buffers<CR>
 
 "nnoremap <leader>o :<C-u>Unite outline -winheight=20<CR>
