@@ -1,4 +1,6 @@
 " Enhanced keyboard mappings
+" Do not open help on F1
+noremap <F1> <nop>
 " toggle expandtab
 nnoremap <F3> :call TabToggle()<CR>
 " toggle ignorecase
@@ -20,6 +22,10 @@ noremap K <nop>
 
 " a sane Y key
 nnoremap Y y$
+
+" move up and down on a wrapped line
+nnoremap j gj
+nnoremap k gk
 
 " Reselect visual block after indent/outdent
 vnoremap < <gv

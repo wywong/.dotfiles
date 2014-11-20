@@ -6,6 +6,11 @@ if has('win32')
   set shellslash
 endif
 
+" source local vimrc if it exists
+if filereadable(glob(expand($HOME) . '/.vimrc.before'))
+  source $HOME/.vimrc.before
+endif
+
 " turn syntax highlighting on
 syntax enable
 if has('gui_running')
@@ -162,8 +167,15 @@ set stl+=%{&ff}] "file format
 set stl+=[%l/%L,
 set stl+=%c]
 
+" Do not open help when F1 is pressed
+noremap <F1> <nop>
+
 " disable ex mode
 noremap Q <nop>
+
+" move up and down on wrapped lines
+nnoremap j gj
+nnoremap k gk
 
 " Reselect visual block after indent/outdent
 vnoremap < <gv
@@ -176,6 +188,6 @@ nnoremap <Leader>k <C-w>k
 nnoremap <Leader>l <C-w>l
 
 " source local vimrc if it exists
-if filereadable(glob(expand($HOME) . '/.vimrc.local'))
-  source $HOME/.vimrc.local
+if filereadable(glob(expand($HOME) . '/.vimrc.after'))
+  source $HOME/.vimrc.after
 endif

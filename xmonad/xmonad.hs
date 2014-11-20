@@ -59,9 +59,9 @@ myManageHook = composeAll
 -- which denotes layout choice.
 --
 myLayout = avoidStruts (
+    Full |||
     Tall 1 (3/100) (1/2) |||
-    Mirror (Tall 1 (3/100) (1/2)) |||
-    Full)
+    Mirror (Tall 1 (3/100) (1/2)))
 
 
 ------------------------------------------------------------------------
