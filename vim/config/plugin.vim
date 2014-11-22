@@ -23,20 +23,30 @@ NeoBundle 'kien/rainbow_parentheses.vim'
 NeoBundle 'mhinz/vim-signify'
 NeoBundle 'tpope/vim-commentary'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundleLazy 'tpope/vim-git', {'autoload':{'filetypes':['gitcommit']}}
 NeoBundle 'tpope/vim-sleuth'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tsukkee/unite-tag'
 
-" Lazy load plugins
-NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', {'autoload':{'filetypes':['tex']}}
-NeoBundleLazy 'kergoth/aftersyntaxc.vim', {'autoload':{'filetypes':['c', 'cpp', 'h', 'hpp']}}
-NeoBundleLazy 'klen/python-mode', {'autoload':{'filetypes':['python']}}
-NeoBundleLazy 'octol/vim-cpp-enhanced-highlight', {'autoload':{'filetypes':['c', 'cpp', 'h', 'hpp']}}
-NeoBundleLazy 'tpope/vim-endwise', {'autoload':{'filetypes':['eruby', 'ruby', 'erb']}}
-NeoBundleLazy 'tpope/vim-git', {'autoload':{'filetypes':['gitcommit']}}
-NeoBundleLazy 'tpope/vim-rails', {'autoload':{'filetypes':['eruby', 'ruby', 'erb']}}
-NeoBundleLazy 'vim-jp/cpp-vim', {'autoload':{'filetypes':['c', 'cpp', 'h', 'hpp']}}
-NeoBundleLazy 'vim-ruby/vim-ruby', {'autoload':{'filetypes':['eruby', 'ruby', 'erb']}}
+if g:cpp_plugins
+  NeoBundleLazy 'kergoth/aftersyntaxc.vim', {'autoload':{'filetypes':['c', 'cpp', 'h', 'hpp']}}
+  NeoBundleLazy 'octol/vim-cpp-enhanced-highlight', {'autoload':{'filetypes':['c', 'cpp', 'h', 'hpp']}}
+  NeoBundleLazy 'vim-jp/cpp-vim', {'autoload':{'filetypes':['c', 'cpp', 'h', 'hpp']}}
+endif
+
+if g:latex_plugins
+  NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', {'autoload':{'filetypes':['tex']}}
+endif
+
+if g:python_plugins
+  NeoBundleLazy 'klen/python-mode', {'autoload':{'filetypes':['python']}}
+endif
+
+if g:ruby_plugins
+  NeoBundleLazy 'tpope/vim-endwise', {'autoload':{'filetypes':['eruby', 'ruby', 'erb']}}
+  NeoBundleLazy 'tpope/vim-rails', {'autoload':{'filetypes':['eruby', 'ruby', 'erb']}}
+  NeoBundleLazy 'vim-ruby/vim-ruby', {'autoload':{'filetypes':['eruby', 'ruby', 'erb']}}
+endif
 
 " source local neobundle if it exists
 if filereadable(glob(expand($HOME) . '/.neobundle.local'))
@@ -47,8 +57,19 @@ call neobundle#end()
 
 filetype plugin indent on
 
-" Source all plugin config files
+" Source all plugin config files in the plug folder
 let s:plugin_configs = split(globpath(expand($VIMFILES) . '/config/plug', '*'), '\n')
 for plugin_ii in s:plugin_configs
   silent! exe 'source ' . plugin_ii
 endfor
+
+let s:optional_config_path = expand($VIMFILES) . '/config/optional'
+
+" source optional plugin configs if needed
+if g:latex_plugins
+  silent! exe 'source ' . s:optional_config_path . '/latex/latexbox.vim'
+endif
+
+if g:python_plugins
+  silent! exe 'source ' . s:optional_config_path . '/python/pymode.vim'
+endif

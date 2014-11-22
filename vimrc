@@ -11,12 +11,19 @@ if filereadable(glob(expand($HOME) . '/.vimrc.before'))
   source $HOME/.vimrc.before
 endif
 
-source $VIMFILES/config/general.vim     " configuration and colors
-source $VIMFILES/config/utils.vim     " configuration and colors
-source $VIMFILES/config/plugin.vim " plugin configuration
-source $VIMFILES/config/templ.vim       " templates for code
-source $VIMFILES/config/hotkeys.vim     " hotkeys
-source $VIMFILES/config/colours.vim     " colours
+source $VIMFILES/config/general.vim " general configuration
+source $VIMFILES/config/utils.vim   " utility functions
+source $VIMFILES/config/flags.vim   " configuration flags
+
+" source .vimrc.flags to override defaults if needed
+if filereadable(glob(expand($HOME) . '/.vimrc.flags'))
+  source $HOME/.vimrc.flags
+endif
+
+source $VIMFILES/config/plugin.vim  " plugin configuration
+source $VIMFILES/config/templ.vim   " templates for code
+source $VIMFILES/config/hotkeys.vim " hotkeys
+source $VIMFILES/config/colours.vim " colours
 
 " source local vimrc if it exists
 if filereadable(glob(expand($HOME) . '/.vimrc.after'))
