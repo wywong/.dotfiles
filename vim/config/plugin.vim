@@ -34,6 +34,10 @@ if g:cpp_plugins
   NeoBundleLazy 'vim-jp/cpp-vim', {'autoload':{'filetypes':['c', 'cpp', 'h', 'hpp']}}
 endif
 
+if g:explorer_plugins
+  NeoBundleLazy 'Shougo/vimfiler', {'autoload' : { 'commands' : ['VimFiler']}}
+endif
+
 if g:latex_plugins
   NeoBundleLazy 'LaTeX-Box-Team/LaTeX-Box', {'autoload':{'filetypes':['tex']}}
 endif
@@ -66,6 +70,13 @@ endfor
 let s:optional_config_path = expand($VIMFILES) . '/config/optional'
 
 " source optional plugin configs if needed
+
+if g:explorer_plugins
+  silent! exe 'source ' . s:optional_config_path . '/explorers/vimfiler.vim'
+else
+  silent! exe 'source ' . s:optional_config_path . '/explorers/netrw.vim'
+endif
+
 if g:latex_plugins
   silent! exe 'source ' . s:optional_config_path . '/latex/latexbox.vim'
 endif
@@ -73,3 +84,4 @@ endif
 if g:python_plugins
   silent! exe 'source ' . s:optional_config_path . '/python/pymode.vim'
 endif
+
