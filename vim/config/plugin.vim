@@ -28,6 +28,12 @@ NeoBundle 'tpope/vim-sleuth'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tsukkee/unite-tag'
 
+if g:complete_plugins
+  NeoBundle 'Shougo/neocomplete'
+  NeoBundle 'Shougo/neosnippet'
+  NeoBundle 'Shougo/neosnippet-snippets'
+endif
+
 if g:cpp_plugins
   NeoBundleLazy 'kergoth/aftersyntaxc.vim', {'autoload':{'filetypes':['c', 'cpp', 'h', 'hpp']}}
   NeoBundleLazy 'octol/vim-cpp-enhanced-highlight', {'autoload':{'filetypes':['c', 'cpp', 'h', 'hpp']}}
@@ -70,6 +76,11 @@ endfor
 let s:optional_config_path = expand($VIMFILES) . '/config/optional'
 
 " source optional plugin configs if needed
+
+if g:complete_plugins
+  silent! exe 'source ' . s:optional_config_path . '/complete/neocomplete.vim'
+  silent! exe 'source ' . s:optional_config_path . '/complete/neosnippet.vim'
+endif
 
 if g:explorer_plugins
   silent! exe 'source ' . s:optional_config_path . '/explorers/vimfiler.vim'
