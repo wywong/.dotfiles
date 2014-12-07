@@ -42,7 +42,7 @@ inoremap <expr><C-e>  neocomplete#cancel_popup()
 "inoremap <expr><Space> pumvisible() ? neocomplete#close_popup() : "\<Space>"
 
 " AutoComplPop like behavior.
-let g:neocomplete#enable_auto_select = 1
+let g:neocomplete#enable_auto_select = 0
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
