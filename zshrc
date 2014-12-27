@@ -8,6 +8,8 @@ fi
 # disable flow control
 stty -ixon
 
+autoload -U add-zsh-hook
+
 for config in `ls ~/.zsh`;
 do
   source $HOME/.zsh/$config;

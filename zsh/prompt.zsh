@@ -1,23 +1,23 @@
-# useful variables for prompt
-_newline=$'\n'
-
 setopt prompt_subst
 
-function __git_prompt {
-  git rev-parse --git-dir >& /dev/null
-  if [[ $? == 0 ]] then
-    echo -n "["
-    echo -n `git branch | grep '* ' | sed 's/..//'`
-    echo -n "] "
-  fi
+# (HH:MM:SS) [branch] user@host cwd
+autoload -U colors && colors
+
+autoload -Uz vcs_info
+zstyle ':vcs_info:*' enable hg git
+zstyle ':vcs_info:(hg*|git*)' formats '[%b] '
+zstyle ':vcs_info:(hg*|git*)' actionformats '[%b:%a] '
+
+function prompt_precmd() {
+  vcs_info
 }
 
-local GIT_PROMPT='$(__git_prompt)'
+function prompt_set() {
+  PROMPT="%{$fg[cyan]%}(%*) %B${vcs_info_msg_0_}%b%{$fg[green]%}%n@%M "
+  PROMPT+="%{$fg[yellow]%}%B%~%b%{$reset_color%}"
+  PROMPT+=$'\n'
+  PROMPT+="%# "
+}
 
-# (HH:MM:SS) [git_branch] user@host cwd
-autoload -U colors && colors
-PROMPT="%{$fg[cyan]%}(%*) \
-%B${GIT_PROMPT}%b\
-%{$fg[green]%}%n@%M \
-%{$fg[yellow]%}\
-%B%~%b%{$reset_color%}${_newline}%# "
+add-zsh-hook precmd prompt_precmd
+add-zsh-hook precmd prompt_set
