@@ -1,0 +1,7 @@
+[ui]
+username = Wilson Y. Wong <wilson.young.wong@gmail.com>
+editor = vim
+ignore = ~/.hgignore
+
+# Local settings
+%include ~/.hgrc_local

@@ -12,6 +12,7 @@ ln -sf .dotfiles/bash/.bashrc .bashrc;
 ln -sf .dotfiles/bash/.bash_profile .bash_profile;
 ln -sf .dotfiles/git/templates .git_templates;
 ln -sf .dotfiles/git/.gitconfig .gitconfig;
+ln -sf .dotfiles/hgrc .hgrc
 ln -sf .dotfiles/tmux.conf .tmux.conf;
 rm -rf .zsh;
 ln -sf .dotfiles/zsh .zsh;
