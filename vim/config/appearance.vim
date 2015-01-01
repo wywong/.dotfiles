@@ -1,16 +1,20 @@
 let g:clear_trailing_ws = 1
 let g:seoul256_background = 234
 
+if has('gui_running')
+  set guioptions-=e  "tab pages
+  set guioptions-=m  "menu bar
+  set guioptions-=T  "toolbar
+  set guioptions-=r  "scrollbar
+  set lines=999 columns=999 " maximize the window
+endif
+
 function! SchemeChange(schemeName)
   if has('gui_running')
-    set guioptions-=m  "menu bar
-    set guioptions-=T  "toolbar
-    set guioptions-=r  "scrollbar
-    set lines=999 columns=999 " maximize the window
     " GUI colors
     colorscheme wombat
     if has("gui_gtk2")
-      set guifont=Inconsolata\ 11
+      set guifont=Inconsolata\ 8
     elseif has("gui_win32")
       set guifont=Consolas:h8:cANSI
     endif
