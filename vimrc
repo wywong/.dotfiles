@@ -20,10 +20,10 @@ if filereadable(glob(expand($HOME) . '/.vimrc.flags'))
   source $HOME/.vimrc.flags
 endif
 
-source $VIMFILES/config/plugin.vim  " plugin configuration
-source $VIMFILES/config/templ.vim   " templates for code
-source $VIMFILES/config/hotkeys.vim " hotkeys
-source $VIMFILES/config/colours.vim " colours
+source $VIMFILES/config/plugin.vim     " plugin configuration
+source $VIMFILES/config/templ.vim      " templates for code
+source $VIMFILES/config/hotkeys.vim    " hotkeys
+source $VIMFILES/config/appearance.vim " appearance
 
 " source local vimrc if it exists
 if filereadable(glob(expand($HOME) . '/.vimrc.after'))

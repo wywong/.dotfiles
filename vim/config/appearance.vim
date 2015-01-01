@@ -3,6 +3,10 @@ let g:seoul256_background = 234
 
 function! SchemeChange(schemeName)
   if has('gui_running')
+    set guioptions-=m  "menu bar
+    set guioptions-=T  "toolbar
+    set guioptions-=r  "scrollbar
+    set lines=999 columns=999 " maximize the window
     " GUI colors
     colorscheme wombat
     if has("gui_gtk2")
