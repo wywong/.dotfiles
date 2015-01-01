@@ -1,6 +1,6 @@
-let g:signify_vcs_list = [ 'git' ]
+let g:signify_vcs_list = [ 'git', 'hg' ]
 
-let g:signify_difftool = 'vimdiff'
+let g:signify_difftool = 'diff'
 
 let g:signify_line_highlight = 0
 

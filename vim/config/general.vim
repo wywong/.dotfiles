@@ -105,6 +105,12 @@ let &backupdir=expand($VIMFILES) . "/tmp//"
 " directory for .swp files
 let &directory=expand($VIMFILES) . "/tmp//"
 
+if v:version >= 703
+  " enable persistent undo if available
+  let &undodir=expand($VIMFILES) . "/tmp//"
+  set undofile
+endif
+
 " CursorHold triggered after 2s
 set updatetime=2000
 " Clear the last search after 2s

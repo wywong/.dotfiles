@@ -7,15 +7,18 @@ call neobundle#begin((expand($VIMFILES) . "/bundle/"))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-NeoBundle 'Shougo/vimproc.vim', {
-      \ 'build' : {
-      \     'windows' : 'make -f make_mingw32.mak',
-      \     'cygwin'  : 'make -f make_cygwin.mak',
-      \     'mac'     : 'make -f make_mac.mak',
-      \     'unix'    : 'make -f make_unix.mak',
-      \    },
-      \ }
-NeoBundle 'Shougo/unite.vim', { 'depends' : [ 'Shougo/vimproc.vim' ] }
+if has('win32')
+  NeoBundle 'Shougo/unite.vim'
+else
+  NeoBundle 'Shougo/vimproc.vim', {
+        \ 'build' : {
+        \     'cygwin'  : 'make -f make_cygwin.mak',
+        \     'mac'     : 'make -f make_mac.mak',
+        \     'unix'    : 'make -f make_unix.mak',
+        \    },
+        \ }
+  NeoBundle 'Shougo/unite.vim', { 'depends' : [ 'Shougo/vimproc.vim' ] }
+endif
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'junegunn/seoul256.vim'
