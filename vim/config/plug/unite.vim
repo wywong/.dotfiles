@@ -8,6 +8,7 @@ call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#custom_source('file_rec,file_rec/async,file_mru,file,buffer,grep',
       \ 'ignore_pattern', join([
       \ '\.git/',
+      \ '\.hg/',
       \ '\.swp$',
       \ '\.o$',
       \ '\.obj$',
@@ -26,3 +27,10 @@ nnoremap <leader>bv :<C-u>Unite -resume -quick-match -buffer-name=buffer buffer 
 
 nnoremap <leader>/ :<C-u>Unite grep:.<CR>
 nnoremap <leader>gb :<C-u>Unite grep:$buffers<CR>
+
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts =
+          \ '--line-numbers --nocolor --nogroup --hidden --ignore ' .
+          \ '''.hg'' --ignore ''.svn'' --ignore ''.git'''
+endif
