@@ -4,6 +4,7 @@ import XMonad
 import XMonad.Actions.UpdatePointer
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.ManageHelpers
 import XMonad.Layout.NoBorders
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeysP)
@@ -23,7 +24,7 @@ myTerminal = "/usr/bin/uxterm"
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-myWorkspaces = ["1:term","2:web","3:media"] ++ map show [4..9]
+myWorkspaces = ["1:default","2:web","3:media"] ++ map show [4..9]
 
 
 ------------------------------------------------------------------------
@@ -42,9 +43,11 @@ myWorkspaces = ["1:term","2:web","3:media"] ++ map show [4..9]
 --
 myManageHook = composeAll
     [ className =? "Chromium" --> doShift "2:web"
-    , className =? "Skype" --> doShift "3:media"
-    , className =? "mpv" --> doShift "3:media"
-    , className =? "evince" --> doShift "3:media"
+    , className =? "Firefox" --> doShift "2:web"
+    , className =? "Gvim" --> doCenterFloat
+    , className =? "mpv" --> doCenterFloat <+> doShift "3:media"
+    , className =? "Skype" --> doCenterFloat <+> doShift "3:media"
+    , className =? "Steam" --> doCenterFloat <+> doShift "3:media"
     ]
 
 

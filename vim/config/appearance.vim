@@ -6,7 +6,7 @@ if has('gui_running')
   set guioptions-=m  "menu bar
   set guioptions-=T  "toolbar
   set guioptions-=r  "scrollbar
-  set lines=999 columns=999 " maximize the window
+  set lines=50 columns=170
 endif
 
 function! SchemeChange(schemeName)
