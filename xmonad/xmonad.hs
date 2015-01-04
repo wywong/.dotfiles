@@ -24,7 +24,7 @@ myTerminal = "/usr/bin/uxterm"
 -- Workspaces
 -- The default number of workspaces (virtual screens) and their names.
 --
-myWorkspaces = ["1:default","2:web","3:media"] ++ map show [4..9]
+myWorkspaces = ["1:default","2:web","3:chat","4:fun"] ++ map show [5..9]
 
 
 ------------------------------------------------------------------------
@@ -44,10 +44,11 @@ myWorkspaces = ["1:default","2:web","3:media"] ++ map show [4..9]
 myManageHook = composeAll
     [ className =? "Chromium" --> doShift "2:web"
     , className =? "Firefox" --> doShift "2:web"
-    , className =? "Gvim" --> doCenterFloat
-    , className =? "mpv" --> doCenterFloat <+> doShift "3:media"
-    , className =? "Skype" --> doCenterFloat <+> doShift "3:media"
-    , className =? "Steam" --> doCenterFloat <+> doShift "3:media"
+    , className =? "Gvim" --> doSideFloat C
+    , className =? "mpv" --> doSideFloat C <+> doShift "4:fun"
+    , className =? "Skype" --> doSideFloat CE <+> doShift "3:chat"
+    , className =? "Steam" --> doSideFloat C <+> doShift "4:fun"
+    , className =? "Telegram" --> doSideFloat CW <+> doShift "3:chat"
     ]
 
 
