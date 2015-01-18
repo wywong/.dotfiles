@@ -30,7 +30,6 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundleLazy 'tpope/vim-git', {'autoload':{'filetypes':['gitcommit']}}
 NeoBundle 'tpope/vim-sleuth'
 NeoBundle 'tpope/vim-surround'
-NeoBundle 'tsukkee/unite-tag'
 
 if g:complete_plugins
   NeoBundle 'Shougo/neocomplete'

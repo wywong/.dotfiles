@@ -14,6 +14,9 @@ nnoremap <S-F5> :make clean all<CR>
 " clear trailing whitespace
 nnoremap <F8> :call CTWS()<CR>
 
+" clear the search register when redrawing vim
+nnoremap <C-l> :let @/=""<CR><C-l>
+
 " disable ex mode
 noremap Q <nop>
 

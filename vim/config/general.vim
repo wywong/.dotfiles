@@ -74,9 +74,9 @@ set hlsearch
 set incsearch
 
 augroup CursorLine
-  au!
-  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
-  au WinLeave * setlocal nocursorline
+  autocmd!
+  autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  autocmd WinLeave * setlocal nocursorline
 augroup END
 
 set foldmethod=indent   "fold based on indent
@@ -87,8 +87,8 @@ set foldlevel=0
 " default breakat - ^I!@*-+;:,./?
 set wrap linebreak
 augroup vimdiff_auto
-  au!
-  au FilterWritePre * if &diff | set wrap | endif
+  autocmd!
+  autocmd FilterWritePre * if &diff | set wrap | endif
 augroup END
 
 " affects <BS>
@@ -110,11 +110,3 @@ if v:version >= 703
   let &undodir=expand($VIMFILES) . "/tmp//"
   set undofile
 endif
-
-" CursorHold triggered after 2s
-set updatetime=2000
-" Clear the last search after 2s
-augroup clear_last_search
-  autocmd!
-  au CursorHold * :let @/=""
-augroup END
