@@ -58,16 +58,21 @@ function start_agent {
     /usr/bin/ssh-add;
 }
 
-# Source SSH settings, if applicable
-
-if [ -f "${SSH_ENV}" ]; then
-    . "${SSH_ENV}" > /dev/null
-    #ps ${SSH_AGENT_PID} doesn't work under cywgin
-    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+# check to see if login via ssh
+if [ -z "$SSH_CONNECTION" ]; then
+  # If user is not root
+  if [[ $UID != 0 ]]; then
+    # Source SSH settings, if applicable
+    if [ -f "${SSH_ENV}" ]; then
+        . "${SSH_ENV}" > /dev/null
+        #ps ${SSH_AGENT_PID} doesn't work under cywgin
+        ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+            start_agent;
+        }
+    else
         start_agent;
-    }
-else
-    start_agent;
+    fi
+  fi
 fi
 
 # add to path to the beginning of $PATH, # if does not already exist
