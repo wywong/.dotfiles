@@ -19,6 +19,7 @@ else
         \ }
   NeoBundle 'Shougo/unite.vim', { 'depends' : [ 'Shougo/vimproc.vim' ] }
 endif
+NeoBundle 'Shougo/neoyank.vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'junegunn/vim-easy-align'
 NeoBundle 'junegunn/seoul256.vim'

@@ -43,7 +43,7 @@ myWorkspaces = ["1:default","2:web","3:chat","4:fun"] ++ map show [5..9]
 -- 'className' and 'resource' are used below.
 --
 myManageHook = composeAll
-    [ className =? "Chromium" --> doShift "2:web"
+    [ className =? "chromium" --> doShift "2:web"
     , className =? "Firefox" --> doShift "2:web"
     , className =? "Gvim" --> doSideFloat C
     , className =? "mpv" --> doSideFloat C <+> doShift "4:fun"
