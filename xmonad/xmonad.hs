@@ -240,7 +240,7 @@ main = do
             ppOutput = hPutStrLn xmproc
           , ppTitle = xmobarColor xmobarTitleColor "" . shorten 100
           , ppCurrent = xmobarColor xmobarCurrentWorkspaceColor ""
-      } ) >> updatePointer ( Relative 0.99 0.99 )
+      } ) >> updatePointer (0.99,0.99) (1,1)
       , manageHook = manageDocks <+> myManageHook
   }
 
