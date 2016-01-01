@@ -241,6 +241,9 @@ main = do
           , ppTitle = xmobarColor xmobarTitleColor "" . shorten 100
           , ppCurrent = xmobarColor xmobarCurrentWorkspaceColor ""
       } ) >> updatePointer (0.99,0.99) (1,1)
+      , handleEventHook = mconcat
+                        [ docksEventHook
+                        , handleEventHook defaultConfig ]
       , manageHook = manageDocks <+> myManageHook
   }
 
