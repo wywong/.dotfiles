@@ -1,7 +1,6 @@
 cd ~;
 git clone https://github.com/wywong/.dotfiles;
 cd .dotfiles;
-git clone https://github.com/Shougo/neobundle.vim ~/.dotfiles/vim/bundle/neobundle.vim;
 cd ~;
 rm -rf .vim;
 ln -sf .dotfiles/vim .vim;
@@ -18,4 +17,3 @@ ln -sf .dotfiles/tmux.conf .tmux.conf;
 rm -rf .zsh;
 ln -sf .dotfiles/zsh .zsh;
 ln -sf .dotfiles/zshrc .zshrc;
-vim +NeoBundleInstall +qall;

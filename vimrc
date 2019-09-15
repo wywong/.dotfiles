@@ -6,6 +6,8 @@ else
   let $VIMFILES='$HOME/.vim'
 endif
 
+let $MYVIMRC='$HOME/.vimrc'
+
 " source local vimrc if it exists
 if filereadable(glob(expand($HOME) . '/.vimrc.before'))
   source $HOME/.vimrc.before

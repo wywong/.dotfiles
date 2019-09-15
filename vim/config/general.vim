@@ -110,3 +110,5 @@ if v:version >= 703
   let &undodir=expand($VIMFILES) . "/tmp//"
   set undofile
 endif
+
+set tags+=./.git/tags;
