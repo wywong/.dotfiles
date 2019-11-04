@@ -10,14 +10,16 @@ let g:pymode_python = 'python3'
 call plug#begin(expand($VIMFILES) . '/plugged')
 
 
-Plug 'Shougo/denite.nvim'
-
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
+if g:complete_plugins
+  Plug 'Shougo/denite.nvim'
+  if has('nvim')
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  else
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
+  endif
+  let g:deoplete#enable_at_startup = 1
 endif
 
 Plug 'Shougo/neoyank.vim'
@@ -33,12 +35,6 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-
-if g:complete_plugins
-  Plug 'Shougo/neocomplete'
-  Plug 'Shougo/neosnippet'
-  Plug 'Shougo/neosnippet-snippets'
-endif
 
 if g:cpp_plugins
   Plug 'kergoth/aftersyntaxc.vim', {'for': ['c', 'cpp', 'h', 'hpp']}
@@ -86,8 +82,8 @@ let s:optional_config_path = expand($VIMFILES) . '/config/optional'
 " source optional plugin configs if needed
 
 if g:complete_plugins
-  silent! exe 'source ' . s:optional_config_path . '/complete/neocomplete.vim'
-  silent! exe 'source ' . s:optional_config_path . '/complete/neosnippet.vim'
+  Plug 'Shougo/neosnippet.vim'
+  Plug 'Shougo/neosnippet-snippets'
 endif
 
 if g:explorer_plugins
