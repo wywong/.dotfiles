@@ -1,3 +1,8 @@
+" source local vimrc if it exists
+if filereadable(glob(expand($HOME) . '/.vimrc.before'))
+  source $HOME/.vimrc.before
+endif
+
 if has('win32')
   " use forward slashes
   set shellslash
@@ -7,11 +12,6 @@ else
 endif
 
 let $MYVIMRC='$HOME/.vimrc'
-
-" source local vimrc if it exists
-if filereadable(glob(expand($HOME) . '/.vimrc.before'))
-  source $HOME/.vimrc.before
-endif
 
 source $VIMFILES/config/general.vim " general configuration
 source $VIMFILES/config/utils.vim   " utility functions

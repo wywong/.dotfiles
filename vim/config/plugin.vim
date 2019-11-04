@@ -10,19 +10,16 @@ let g:pymode_python = 'python3'
 call plug#begin(expand($VIMFILES) . '/plugged')
 
 
+Plug 'Shougo/denite.nvim'
 
-if has('win32')
-  Plug 'Shougo/unite.vim'
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
-  Plug 'Shougo/vimproc.vim', {
-        \ 'build' : {
-        \     'cygwin'  : 'make -f make_cygwin.mak',
-        \     'mac'     : 'make -f make_mac.mak',
-        \     'unix'    : 'make -f make_unix.mak',
-        \    },
-        \ }
-  Plug 'Shougo/unite.vim', { 'depends' : [ 'Shougo/vimproc.vim' ] }
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
 endif
+
 Plug 'Shougo/neoyank.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/vim-easy-align'

@@ -111,4 +111,13 @@ if v:version >= 703
   set undofile
 endif
 
+if ! has('gui_running')
+  set ttimeoutlen=10
+  augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=100
+  augroup END
+endif
+
 set tags+=./.git/tags;
