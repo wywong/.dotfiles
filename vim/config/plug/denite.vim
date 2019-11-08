@@ -10,6 +10,7 @@ call denite#custom#var('grep', 'final_opts', [])
 
 call denite#custom#map('insert,normal', "<C-v>", '<denite:do_action:vsplit>')
 call denite#custom#map('insert,normal', "<C-s>", '<denite:do_action:split>')
+nnoremap <leader>b :Denite buffer<CR>
 nnoremap <leader>g :<C-u>Denite grep:. -no-empty<CR>
 nnoremap <leader>w :<C-u>DeniteCursorWord grep:.<CR>
 autocmd FileType denite call s:denite_settings()

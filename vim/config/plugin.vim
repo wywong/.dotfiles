@@ -53,7 +53,7 @@ if g:latex_plugins
 endif
 
 if g:python_plugins
-  Plug 'klen/python-mode', {'for': ['python']}
+  Plug 'deoplete-plugins/deoplete-jedi', {'for': ['python']}
 endif
 
 if g:ruby_plugins
