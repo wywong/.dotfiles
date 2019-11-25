@@ -5,8 +5,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-let g:pymode_python = 'python3'
-
 call plug#begin(expand($VIMFILES) . '/plugged')
 
 
@@ -103,9 +101,5 @@ endif
 
 if g:latex_plugins
   silent! exe 'source ' . s:optional_config_path . '/latex/latexbox.vim'
-endif
-
-if g:python_plugins
-  silent! exe 'source ' . s:optional_config_path . '/python/pymode.vim'
 endif
 
